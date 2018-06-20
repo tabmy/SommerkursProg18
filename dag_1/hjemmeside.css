@@ -16,6 +16,7 @@ body {
     background-color: black;
     height: 5em;
 }
+
 .header > .headerText{
     margin: 1em 2em 1em 0 ;
     color: white;
@@ -26,12 +27,19 @@ body {
     margin-right: 2em;
 }
 
+.header > .headerLink > a{
+    margin: 1em 2em 1em 0 ;
+    color: white;
+    font-weight: bold;
+}
+
 .content{
  margin-left: 2em;
     color: #000000;
 }
-/*  ID's    */
 
+
+/*  ID's    */
 #osloMetlogo{
     height: 5em;
 
