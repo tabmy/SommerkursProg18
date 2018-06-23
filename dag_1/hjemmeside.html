@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>OsloMet progkurs</title>
     <link rel="stylesheet" type="text/css" href="hjemmeside.css"/>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
 
@@ -13,13 +15,13 @@
     </div>
 
     <div class="headerText">
-        <p>Placeholder text</p>
+        <p>HTML</p>
     </div>
     <div class="headerText">
-        <p>Lorem ipsum</p>
+        <p>CSS</p>
     </div>
     <div class="headerLink">
-        <a href="http://www.w3schools.com">w3schools</a>
+        <a href="http://www.W3Schools.com">W3Schools</a>
     </div>
 </div>
 
@@ -28,18 +30,36 @@
         Denne siden er en eksempelside på hvordan man kan lage en enkel webside kun ved bruk av HTML og CSS.
     </p>
 
+    <h1>HTML</h1>
+    <p>
+        HTML står for HyperText Markup Language, og er et markeringssrpåk som brukes til å formatere og strukturere nettsider.
+    </p>
+    <p>
+        HTML er grunnstenen i nettsider, og inneholder alt som presenteres for nettleseren; blant annet tekst, bilde-, lyd- og video-elementer.
+    </p>
     <h2>
         Tags - &lt;...&gt;
     </h2>
     <p>
-
+        Tags i HTML er elementer som forteller hvordan dokumentet er bygget opp.
+        <br>
+        Elementene forteller hvordan strukturen på HTML-dokumentet skal presenteres, og i et rent HTML-dokument vil alt presenteres i rekkefølge fra topp til bunn.
+        <br>
+        HTML er kort fortalt hva som skal vises på en nettside.
     </p>
-
+    <p>
+        Alle tager avsluttes med "/&gt;". Enten direkte (<code>&lt;meta author="Abelsen, Tommy"/&gt;</code>),
+            eller med tekst som presenteres imellom:
+        <br>
+        (<code>&lt;a href="https://www.oslomet.no"&gt;OsloMet.no&lt;/a&gt;</code> vises som <a href="https://www.oslomet.no">OsloMet.no</a>)
+    </p>
     <h3>
         Dokument-type - &lt;!DOCTYPE&gt;
     </h3>
     <p>
-        text ...
+        !DOCTYPE forteller nettleseren hva slags type dokument som skal tolkes og presenteres.
+        <br>
+        <code>&lt;!DOCTYPE html&gt;</code> sier at dokumentet er av typen HTML, som er mest vanlig å presentere nettsider i.
     </p>
 
     <h3>
@@ -47,7 +67,9 @@
     </h3>
 
     <p>
-        text goes here
+        <code>&lt;html&gt;</code>-tagen viser at alt som er innenfor denne er av typen HTML.
+        <br>
+
     </p>
 
     <h3>
@@ -55,13 +77,28 @@
     </h3>
 
     <p>
-        text ...
+        Head-tagen inneholder viktige elementer, som for eksempel forfatter, lenker til CSS(styling)-filer og lenker til javascript-filer.
+        <br>
+        Ved å henvise til andre dokumenter (lenker til filene) slipper en å skrive all kode i HTML-dokumentet, og man kan referere til samme filer
+        i flere dokumenter.
+        <br>
+        Dette gjør at en enkelt kan bruke samme stil og scripts på flere sider.
+    </p>
+    <p>
+        Det er også viktig å huske at alt det som skrives i <code>&lt;head&gt;</code> ikke blir presentert (vist) i nettleser.
+        <br>
+        Det vil si at det man skriver i <code>&lt;head&gt;</code> ikke er synlig på nettsidene, med mindre man åpner kildekoden og leser HTML.
     </p>
 
     <h3>
         Body - &lt;body&gt;
     </h3>
-
+    <p>
+        Det er først i <code>&lt;body&gt;</code> at HTML-elementer blir vist.
+        <br>
+        Alt man skriver i <code>&lt;body&gt;</code> vises på nettsiden, enten det er skrevet i tags eller som ren tekst.
+    </p>
+    Ren tekst
     <h3>
         Avsnitt - &lt;p&gt;
     </h3>
@@ -111,7 +148,19 @@
     </p>
     <img src="../img/osloMet.png" width="25%">
 
+    <h3>W3Schools</h3>
+    <p>
+        <a href="http://www.W3Schools.com/html/">Lenke til W3Schools HTML</a>
+        <br>
+        Her kan man finne informasjon og eksempler om stort sett alt av HTML.
+    </p>
 
+    <h3>W3Schools</h3>
+    <p>
+        <a href="http://www.W3Schools.com/css/">Lenke til W3Schools CSS</a>
+        <br>
+        Her kan man finne informasjon og eksempler om stort sett alt av CSS.
+    </p>
 </div>
 </body>
 </html>
