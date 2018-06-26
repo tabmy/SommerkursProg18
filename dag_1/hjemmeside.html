@@ -41,14 +41,14 @@
         Tags - &lt;...&gt;
     </h2>
     <p>
-        Tags i HTML er elementer som forteller hvordan dokumentet er bygget opp.
+        tags i HTML er elementer som forteller hvordan dokumentet er bygget opp.
         <br>
         Elementene forteller hvordan strukturen på HTML-dokumentet skal presenteres, og i et rent HTML-dokument vil alt presenteres i rekkefølge fra topp til bunn.
         <br>
         HTML er kort fortalt hva som skal vises på en nettside.
     </p>
     <p>
-        Alle tager avsluttes med "/&gt;". Enten direkte (<code>&lt;meta author="Abelsen, Tommy"/&gt;</code>),
+        Alle tags avsluttes med "/&gt;". Enten direkte (<code>&lt;meta author="Abelsen, Tommy"/&gt;</code>),
             eller med tekst som presenteres imellom:
         <br>
         (<code>&lt;a href="https://www.oslomet.no"&gt;OsloMet.no&lt;/a&gt;</code> vises som <a href="https://www.oslomet.no">OsloMet.no</a>)
@@ -148,11 +148,79 @@
     </p>
     <img src="../img/osloMet.png" width="25%">
 
+    <h3>Klasser og ID</h3>
+
+    <p>
+        Klasser og id er viktige attributter som knyttes til enkelte (ID) eller hele grupper (klasser) av elementer.
+        <br>
+        Klasser og id brukes ofte i forbindelse med design og oppførsel, og gjør det lettere å lage regler for individuelle eller en gruppe elementer.
+    </p>
+
+    <p>
+        Klasser defineres ved <code>class="navn på klasse her"</code> i HTML tag.
+        <br>
+        Ganske likt, så defineres id slik: <code>id="navn på id her"</code> i en HTML
+    </p>
+
+    <p>
+        Eksempel: <br>
+        <code>&lt;h1 class="headline"&gt;</code> og <br>
+        <code>&lt;p id="content"&gt;</code>
+    </p>
+
+    <p>
+        Det må også nevnes at alle standard-elementer i HTML er av typen klasser, så en kan enkelt gi regler til eksempelvis alle <code>p</code>-tags.
+    </p>
+
+    <h3>
+        <code>&lt;div&gt;</code>
+    </h3>
+    <p>
+        <code>&lt;div&gt;</code>-tagen brukes veldig ofte når man skal designe en side med en del CSS og ikke ønsker å ha forskjellige, og motstridende, regler på samme elementer.
+        <br>
+        <code>&lt;div&gt;</code> brukes gjerne sammen med klasser og id-er for å gi regler på egenlagde elementer.
+    </p>
+    <p>
+        I motsetning til <code>p</code>- og <code>h</code>-tags, som har veldefinerte rammer for bruk, kan <code>&lt;div&gt;</code> brukes til absolutt alt; til tekst, til bilder, til video og lyd.
+    </p>
+
     <h3>W3Schools</h3>
     <p>
         <a href="http://www.W3Schools.com/html/">Lenke til W3Schools HTML</a>
         <br>
         Her kan man finne informasjon og eksempler om stort sett alt av HTML.
+    </p>
+
+    <h1>
+        CSS
+    </h1>
+    <p>
+        CSS står for Cascading Style Sheets.
+        <br>
+        CSS brukes først og fremst til å definere utseende til HTML-, (og XML-), elementer.
+    </p>
+
+    <p>
+        CSS kan blant annet endre <span style="font-size: 2em;">størrelse</span> og <span style="color:red">farge</span> på tekst,
+        <br>
+        samt endre posisjoner på elementer.
+    </p>
+    <p>
+        Der HTML er elementene som skal vises, eller skjelettet til dokumentet, er CSS <i>hvordan</i> elementene skal vises.
+        <br>
+        CSS definerer utseende på HTML og kan sammenlignes med hvordan muskler, hud og hår definerer utseende til et menneske.
+    </p>
+
+    <h3>Style</h3>
+    <p>
+        CSS kan skrives i HTML-dokumenter, både i <code>&lt;head&gt;</code> og <code>&lt;body&gt;</code>.
+        <br>
+        Man kan style elementer direkte: <code style="color:green">&lt;p style="color:green"&gt;</code>, eller i <code>&lt;style&gt;</code>-tags i <code>&lt;head&gt;</code>
+    </p>
+    <p>
+        Det er likevel mest vanlig å lage et eget stilark (stylesheet) med CSS, og linke til det arket i HTML-head.
+        <br>
+        Dette kan gjøres ved å skrive <code>&lt;link rel="stylesheet" type="text/css" href="filsti til .css-dokument"&gt;</code> i head-tagen.
     </p>
 
     <h3>W3Schools</h3>
