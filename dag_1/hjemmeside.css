@@ -61,6 +61,10 @@ body {
     font-size: 3em;
 }
 
+.section > #headerExample{
+    text-align: center;
+}
+
 .footer{
     bottom: 0;
     margin-top: 2em;
@@ -75,6 +79,8 @@ body {
     height: 5em;
 
 }
+
+
 
 #footertext{
     width: 50%;
