@@ -14,11 +14,11 @@
         <img id="osloMetlogo" src="../img/osloMet.png"/>
     </div>
 
-    <div class="headerText">
-        <p>HTML</p>
+    <div class="headerLink">
+        <a href="#html">HTML</a>
     </div>
-    <div class="headerText">
-        <p>CSS</p>
+    <div class="headerLink">
+        <a href="#css">CSS</a>
     </div>
     <div class="headerLink">
         <a href="http://www.W3Schools.com">W3Schools</a>
@@ -26,209 +26,290 @@
 </div>
 
 <div class="content">
-    <p>
-        Denne siden er en eksempelside på hvordan man kan lage en enkel webside kun ved bruk av HTML og CSS.
-    </p>
 
-    <h1>HTML</h1>
-    <p>
-        HTML står for HyperText Markup Language, og er et markeringssrpåk som brukes til å formatere og strukturere nettsider.
-    </p>
-    <p>
-        HTML er grunnstenen i nettsider, og inneholder alt som presenteres for nettleseren; blant annet tekst, bilde-, lyd- og video-elementer.
-    </p>
-    <h2>
-        Tags - &lt;...&gt;
-    </h2>
-    <p>
-        tags i HTML er elementer som forteller hvordan dokumentet er bygget opp.
-        <br>
-        Elementene forteller hvordan strukturen på HTML-dokumentet skal presenteres, og i et rent HTML-dokument vil alt presenteres i rekkefølge fra topp til bunn.
-        <br>
-        HTML er kort fortalt hva som skal vises på en nettside.
-    </p>
-    <p>
-        Alle tags avsluttes med "/&gt;". Enten direkte (<code>&lt;meta author="Abelsen, Tommy"/&gt;</code>),
+    <div class="section" id="html">
+
+        <h1>HTML</h1>
+        <p>
+            HTML står for HyperText Markup Language, og er et markeringssrpåk som brukes til å formatere og strukturere
+            nettsider.
+        </p>
+        <p>
+            HTML er grunnstenen i nettsider, og inneholder alt som presenteres for nettleseren; blant annet tekst,
+            bilde-, lyd- og video-elementer.
+        </p>
+        <h2>
+            Tags - &lt;...&gt;
+        </h2>
+        <p>
+            tags i HTML er elementer som forteller hvordan dokumentet er bygget opp.
+            <br>
+            Elementene forteller hvordan strukturen på HTML-dokumentet skal presenteres, og i et rent HTML-dokument vil
+            alt presenteres i rekkefølge fra topp til bunn.
+            <br>
+            HTML er kort fortalt hva som skal vises på en nettside.
+        </p>
+        <p>
+            Alle tags avsluttes med "/&gt;". Enten direkte (<code>&lt;meta author="Abelsen, Tommy"/&gt;</code>),
             eller med tekst som presenteres imellom:
-        <br>
-        (<code>&lt;a href="https://www.oslomet.no"&gt;OsloMet.no&lt;/a&gt;</code> vises som <a href="https://www.oslomet.no">OsloMet.no</a>)
-    </p>
-    <h3>
-        Dokument-type - &lt;!DOCTYPE&gt;
-    </h3>
-    <p>
-        !DOCTYPE forteller nettleseren hva slags type dokument som skal tolkes og presenteres.
-        <br>
-        <code>&lt;!DOCTYPE html&gt;</code> sier at dokumentet er av typen HTML, som er mest vanlig å presentere nettsider i.
-    </p>
+            <br>
+            (<code>&lt;a href="https://www.oslomet.no"&gt;OsloMet.no&lt;/a&gt;</code> vises som <a
+                href="https://www.oslomet.no">OsloMet.no</a>)
+        </p>
+        <h3>
+            Dokument-type - &lt;!DOCTYPE&gt;
+        </h3>
+        <p>
+            !DOCTYPE forteller nettleseren hva slags type dokument som skal tolkes og presenteres.
+            <br>
+            <code>&lt;!DOCTYPE html&gt;</code> sier at dokumentet er av typen HTML, som er mest vanlig å presentere
+            nettsider i.
+        </p>
 
-    <h3>
-        HTML - &lt;HTML&gt;
-    </h3>
+        <h3>
+            HTML - &lt;HTML&gt;
+        </h3>
 
-    <p>
-        <code>&lt;html&gt;</code>-tagen viser at alt som er innenfor denne er av typen HTML.
-        <br>
+        <p>
+            <code>&lt;html&gt;</code>-tagen viser at alt som er innenfor denne er av typen HTML.
+            <br>
 
-    </p>
+        </p>
 
-    <h3>
-        Head - &lt;head&gt;
-    </h3>
+        <h3>
+            Head - &lt;head&gt;
+        </h3>
 
-    <p>
-        Head-tagen inneholder viktige elementer, som for eksempel forfatter, lenker til CSS(styling)-filer og lenker til javascript-filer.
-        <br>
-        Ved å henvise til andre dokumenter (lenker til filene) slipper en å skrive all kode i HTML-dokumentet, og man kan referere til samme filer
-        i flere dokumenter.
-        <br>
-        Dette gjør at en enkelt kan bruke samme stil og scripts på flere sider.
-    </p>
-    <p>
-        Det er også viktig å huske at alt det som skrives i <code>&lt;head&gt;</code> ikke blir presentert (vist) i nettleser.
-        <br>
-        Det vil si at det man skriver i <code>&lt;head&gt;</code> ikke er synlig på nettsidene, med mindre man åpner kildekoden og leser HTML.
-    </p>
+        <p>
+            Head-tagen inneholder viktige elementer, som for eksempel forfatter, lenker til CSS(styling)-filer og lenker
+            til javascript-filer.
+            <br>
+            Ved å henvise til andre dokumenter (lenker til filene) slipper en å skrive all kode i HTML-dokumentet, og
+            man kan referere til samme filer
+            i flere dokumenter.
+            <br>
+            Dette gjør at en enkelt kan bruke samme stil og scripts på flere sider.
+        </p>
+        <p>
+            Det er også viktig å huske at alt det som skrives i <code>&lt;head&gt;</code> ikke blir presentert (vist) i
+            nettleser.
+            <br>
+            Det vil si at det man skriver i <code>&lt;head&gt;</code> ikke er synlig på nettsidene, med mindre man åpner
+            kildekoden og leser HTML.
+        </p>
 
-    <h3>
-        Body - &lt;body&gt;
-    </h3>
-    <p>
-        Det er først i <code>&lt;body&gt;</code> at HTML-elementer blir vist.
-        <br>
-        Alt man skriver i <code>&lt;body&gt;</code> vises på nettsiden, enten det er skrevet i tags eller som ren tekst.
-    </p>
-    Ren tekst
-    <h3>
-        Avsnitt - &lt;p&gt;
-    </h3>
-    <p>
-        For å skrive tekst i HTML, bruker en gjerne "p-tags".
-        P står for "paragraph", eller avsnitt, og brukes for å bygge opp teksten du skriver og separere avsnitt.
-        <br>
-        Det går an å skrive tekst uten å bruke tags, men dette er ikke anbefalt.
-    </p>
+        <h3>
+            Body - &lt;body&gt;
+        </h3>
+        <p>
+            Det er først i <code>&lt;body&gt;</code> at HTML-elementer blir vist.
+            <br>
+            Alt man skriver i <code>&lt;body&gt;</code> vises på nettsiden, enten det er skrevet i tags eller som ren
+            tekst.
+        </p>
+        Ren tekst
+        <h3>
+            Avsnitt - &lt;p&gt;
+        </h3>
+        <p>
+            For å skrive tekst i HTML, bruker en gjerne "p-tags".
+            P står for "paragraph", eller avsnitt, og brukes for å bygge opp teksten du skriver og separere avsnitt.
+            <br>
+            Det går an å skrive tekst uten å bruke tags, men dette er ikke anbefalt.
+        </p>
 
-    <h3>Overskrifter - &lt;h#&gt;</h3>
-    <p>
-        For å lage overskrifter (headlines) bruker man h-tags. H-tags går fra h1 til h6, hvor h1 er størst og h6 er
-        minst.
-        <br>
-        Eksempler på dette:
-    </p>
-    <h1>&lt;h1&gt;</h1>
-    <h2>&lt;h2&gt;</h2>
-    <h3>&lt;h3&gt;</h3>
-    <h4>&lt;h4&gt;</h4>
-    <h5>&lt;h5&gt;</h5>
-    <h6>&lt;h6&gt;</h6>
+        <h3>Overskrifter - &lt;h#&gt;</h3>
+        <p>
+            For å lage overskrifter (headlines) bruker man h-tags. H-tags går fra h1 til h6, hvor h1 er størst og h6 er
+            minst.
+            <br>
+            Eksempler på dette:
+        </p>
+        <h1>&lt;h1&gt;</h1>
+        <h2>&lt;h2&gt;</h2>
+        <h3>&lt;h3&gt;</h3>
+        <h4>&lt;h4&gt;</h4>
+        <h5>&lt;h5&gt;</h5>
+        <h6>&lt;h6&gt;</h6>
 
-    <h3>
-        Lenker - &lt;a href&gt;
-    </h3>
-    <p>
-        En lenke ser slik ut: <br>
-        <a href="http://www.oslomet.no">Lenke til OsloMet.no</a>
-    </p>
-    <p> Man kan lage en lenke i HTML med følgende tag:
-        <br>
-        <code>
-            &lt;a href="link til siden"&gt; Tekst på lenken &lt;/a&gt;
-        </code>
-    </p>
+        <h3>
+            Lenker - &lt;a href&gt;
+        </h3>
+        <p>
+            En lenke ser slik ut: <br>
+            <a href="http://www.oslomet.no">Lenke til OsloMet.no</a>
+        </p>
+        <p> Man kan lage en lenke i HTML med følgende tag:
+            <br>
+            <code>
+                &lt;a href="link til siden"&gt; Tekst på lenken &lt;/a&gt;
+            </code>
+        </p>
 
-    <h3>
-        Bilder - &lt;img&gt;
-    </h3>
+        <h3>
+            Bilder - &lt;img&gt;
+        </h3>
 
-    <p>
-        Bilder kan enkelt legges inn i HTML ved å bruke <code>&lt;img src="lenke til bilde"&gt;</code>
-        <br>
-        Eksempel:
-    </p>
-    <img src="../img/osloMet.png" width="25%">
+        <p>
+            Bilder kan enkelt legges inn i HTML ved å bruke <code>&lt;img src="lenke til bilde"&gt;</code>
+            <br>
+            Eksempel:
+        </p>
+        <img src="../img/osloMet.png" width="25%">
 
-    <h3>Klasser og ID</h3>
+        <h3>Klasser og ID</h3>
 
-    <p>
-        Klasser og id er viktige attributter som knyttes til enkelte (ID) eller hele grupper (klasser) av elementer.
-        <br>
-        Klasser og id brukes ofte i forbindelse med design og oppførsel, og gjør det lettere å lage regler for individuelle eller en gruppe elementer.
-    </p>
+        <p>
+            Klasser og id er viktige attributter som knyttes til enkelte (ID) eller hele grupper (klasser) av elementer.
+            <br>
+            Klasser og id brukes ofte i forbindelse med design og oppførsel, og gjør det lettere å lage regler for
+            individuelle eller en gruppe elementer.
+        </p>
 
-    <p>
-        Klasser defineres ved <code>class="navn på klasse her"</code> i HTML tag.
-        <br>
-        Ganske likt, så defineres id slik: <code>id="navn på id her"</code> i en HTML
-    </p>
+        <p>
+            Klasser defineres ved <code>class="navn på klasse her"</code> i HTML tag.
+            <br>
+            Ganske likt, så defineres id slik: <code>id="navn på id her"</code> i en HTML
+        </p>
 
-    <p>
-        Eksempel: <br>
-        <code>&lt;h1 class="headline"&gt;</code> og <br>
-        <code>&lt;p id="content"&gt;</code>
-    </p>
+        <p>
+            Eksempel: <br>
+            <code>&lt;h1 class="headline"&gt;</code> og <br>
+            <code>&lt;p id="content"&gt;</code>
+        </p>
 
-    <p>
-        Det må også nevnes at alle standard-elementer i HTML er av typen klasser, så en kan enkelt gi regler til eksempelvis alle <code>p</code>-tags.
-    </p>
+        <p>
+            Det må også nevnes at alle standard-elementer i HTML er av typen klasser, så en kan enkelt gi regler til
+            eksempelvis alle <code>p</code>-tags.
+        </p>
 
-    <h3>
-        <code>&lt;div&gt;</code>
-    </h3>
-    <p>
-        <code>&lt;div&gt;</code>-tagen brukes veldig ofte når man skal designe en side med en del CSS og ikke ønsker å ha forskjellige, og motstridende, regler på samme elementer.
-        <br>
-        <code>&lt;div&gt;</code> brukes gjerne sammen med klasser og id-er for å gi regler på egenlagde elementer.
-    </p>
-    <p>
-        I motsetning til <code>p</code>- og <code>h</code>-tags, som har veldefinerte rammer for bruk, kan <code>&lt;div&gt;</code> brukes til absolutt alt; til tekst, til bilder, til video og lyd.
-    </p>
+        <h3>
+            <code>&lt;div&gt;</code>
+        </h3>
+        <p>
+            <code>&lt;div&gt;</code>-tagen brukes veldig ofte når man skal designe en side med en del CSS og ikke ønsker
+            å ha forskjellige, og motstridende, regler på samme elementer.
+            <br>
+            <code>&lt;div&gt;</code> brukes gjerne sammen med klasser og id-er for å gi regler på egenlagde elementer.
+        </p>
+        <p>
+            I motsetning til <code>p</code>- og <code>h</code>-tags, som har veldefinerte rammer for bruk, kan <code>&lt;div&gt;</code>
+            brukes til absolutt alt; til tekst, til bilder, til video og lyd.
+        </p>
 
-    <h3>W3Schools</h3>
-    <p>
-        <a href="http://www.W3Schools.com/html/">Lenke til W3Schools HTML</a>
-        <br>
-        Her kan man finne informasjon og eksempler om stort sett alt av HTML.
-    </p>
+        <h3>W3Schools</h3>
+        <p>
+            <a href="http://www.W3Schools.com/html/">Lenke til W3Schools HTML</a>
+            <br>
+            Her kan man finne informasjon og eksempler om stort sett alt av HTML.
+        </p>
+    </div>
+    <div class="section" id="css">
+        <h1>
+            CSS
+        </h1>
+        <p>
+            CSS står for Cascading Style Sheets.
+            <br>
+            CSS brukes først og fremst til å definere utseende til HTML-, (og XML-), elementer.
+        </p>
 
-    <h1>
-        CSS
-    </h1>
-    <p>
-        CSS står for Cascading Style Sheets.
-        <br>
-        CSS brukes først og fremst til å definere utseende til HTML-, (og XML-), elementer.
-    </p>
+        <p>
+            CSS kan blant annet endre <span style="font-size: 2em;">størrelse</span> og <span
+                style="color:red">farge</span> på tekst,
+            <br>
+            samt endre posisjoner på elementer.
+        </p>
+        <p>
+            Der HTML er elementene som skal vises, eller skjelettet til dokumentet, er CSS <i>hvordan</i> elementene
+            skal vises.
+            <br>
+            CSS definerer utseende på HTML og kan sammenlignes med hvordan muskler, hud og hår definerer utseende til et
+            menneske.
+        </p>
 
-    <p>
-        CSS kan blant annet endre <span style="font-size: 2em;">størrelse</span> og <span style="color:red">farge</span> på tekst,
-        <br>
-        samt endre posisjoner på elementer.
-    </p>
-    <p>
-        Der HTML er elementene som skal vises, eller skjelettet til dokumentet, er CSS <i>hvordan</i> elementene skal vises.
-        <br>
-        CSS definerer utseende på HTML og kan sammenlignes med hvordan muskler, hud og hår definerer utseende til et menneske.
-    </p>
+        <h3>Style</h3>
+        <p>
+            CSS kan skrives i HTML-dokumenter, både i <code>&lt;head&gt;</code> og <code>&lt;body&gt;</code>.
+            <br>
+            Man kan style elementer direkte: <code style="color:green">&lt;p style="color:green"&gt;</code>, eller i
+            <code>&lt;style&gt;</code>-tags i <code>&lt;head&gt;</code>
+        </p>
+        <p>
+            Det er likevel mest vanlig å lage et eget stilark (stylesheet) med CSS, og linke til det arket i HTML-head.
+            <br>
+            Dette kan gjøres ved å skrive <code>&lt;link rel="stylesheet" type="text/css" href="filsti til
+            .css-dokument"&gt;</code> i head-tagen.
+        </p>
 
-    <h3>Style</h3>
-    <p>
-        CSS kan skrives i HTML-dokumenter, både i <code>&lt;head&gt;</code> og <code>&lt;body&gt;</code>.
-        <br>
-        Man kan style elementer direkte: <code style="color:green">&lt;p style="color:green"&gt;</code>, eller i <code>&lt;style&gt;</code>-tags i <code>&lt;head&gt;</code>
-    </p>
-    <p>
-        Det er likevel mest vanlig å lage et eget stilark (stylesheet) med CSS, og linke til det arket i HTML-head.
-        <br>
-        Dette kan gjøres ved å skrive <code>&lt;link rel="stylesheet" type="text/css" href="filsti til .css-dokument"&gt;</code> i head-tagen.
-    </p>
+        <h3>Design</h3>
+        <p>
+            Design av nettsider er viktig. Både for å skape et inntrykk om en estetisk god presentasjon, og for å gjøre
+            nettsiden enkel og oversiktlig.
+            <br>
+            Webdesign handler om hvordan skape en nettside som formidler budskapet man ønsker, eksempelvis ved å
+            understreke eller fremheve viktige elementer, samtidig som man passer på at nettsiden skal være
+            brukervennlig.
+            <br>
+            En lite brukervennlig nettside kan karaktiseres ved uoversiktlig plassering av elementer, distraherende
+            eller anonymiserende fargebruk og er gjerne vanskelige å navigere.
+        </p>
+        <p>
+            En godt designet nettside er subjektivt, og alle har forskjellige meninger. Men likevel er det noen
+            hovedregler man bør passe på.
+        </p>
+        <p>
+            Man bør tenke over:<br>
+            <em>Målet</em> med nettsiden - skal den være informativ, skape interesse eller kanskje underholde?
+            <br>
+            <em>Virkemidler</em> man bruker - skal siden være fargerik, ha kontraster og forskjellige størrelser?
+            <br>
+            <em>Brukeropplevelse</em> - hvordan gjøre nettsiden enklest og mest mulig oversiktlig, samtidig som den har
+            en tydelig og gjennomført stil.
+        </p>
+        <p>
+            Ingen av disse punktene har noen fasitsvar til hvordan designe nettsiden, men det kan bidra til en bedre
+            designprosess.
+            <br>
+            Dette vil igjen gjøre det lettere å nå målet med god bruk av visuelle virkemidler.
+        </p>
 
-    <h3>W3Schools</h3>
-    <p>
-        <a href="http://www.W3Schools.com/css/">Lenke til W3Schools CSS</a>
-        <br>
-        Her kan man finne informasjon og eksempler om stort sett alt av CSS.
-    </p>
+        <h3>
+            Attributter
+        </h3>
+
+        <p>
+            CSS har enormt mange egenskaper, altså hva som skal endres og hvordan, som gjør at en kan endre på alt fra
+            farge, størrelse og posisjon til dekorasjoner, forskjellige betingede og ubetingede regler og skrifttyper.
+        </p>
+        <p>
+            De viktigste grunnleggende egenskapene er <em>farge</em>, <em>størrelse</em> og <em>posisjon</em>
+            <br>
+            Les gjerne om dem, og alle de andre, på W3Schools.
+        </p>
+
+        <h3>W3Schools</h3>
+        <p>
+            <a href="http://www.W3Schools.com/css/">Lenke til W3Schools CSS</a>
+            <br>
+            Her kan man finne informasjon og eksempler om stort sett alt av CSS.
+        </p>
+    </div>
+
+</div>
+<div class="footer">
+    <div id="footertext">
+        <p>
+            Denne siden er en eksempelside på hvordan man kan lage en enkel webside kun ved bruk av HTML og CSS.
+            <br>
+            Samtidig inneholder den en del nyttig informasjon om HTML og CSS som er verdt å ta med seg.
+        </p>
+
+        <a href="http://www.oslomet.no">&#128279OsloMet - storbyuniversitetet, 2018</a>
+    </div>
+    <div id="footerlink">
+        <a href="#">Til toppen</a>
+    </div>
 </div>
 </body>
 </html>
