@@ -14,3 +14,39 @@ p {
 h1{
     margin-bottom: 40px;
 }
+
+#osloMetlogo{
+    height: 5em;
+}
+
+.header {
+    display: inline-flex;
+    width: 100%;
+    background-color: black;
+    height: 5em;
+    margin-bottom: 2em;
+}
+
+.header > .headerText{
+    margin: 1em 2em 1em 0;
+    color: white;
+    font-weight: bold;
+}
+
+.headerImg{
+    margin-right: 2em;
+}
+
+.header > .headerLink {
+    margin: 1em 2em 1em 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.header > .headerLink > a{
+    color: white;
+    text-decoration: none;
+}
+.header > .headerLink > a:hover{
+    background-color: darkgray;
+}
