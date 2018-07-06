@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </head>
 <body>
 <div class="container">
@@ -155,7 +155,38 @@
         <div class="panel panel-primary">
             <div class="panel panel-heading">4. Legge til produkt i handleliste</div>
             <div class="panel-body">
+                <p>Vi har nå laget all HTML og CSS for første versjon av webshoppen vår. Nå skal vi videre legge til funksjonalitet for å legge til produkter i en 'handleliste'. For å gjøre dette må vi bruke Javascript.</p>
+                <p>Det første vi kan gjøre er å skrive følgende inn i Javascript filen vår (script.js): <code>var items = [];</code></p>
+                <p>Her har vi laget en <i>variabel</i> som vi har kalt for 'items'. Denne har fått verdien '[ ]', som er en liste/tabell. I denne listen kan vi legge til forskjellige type verdier.
+                    I vårt tilfelle skal vi legge inn hvilke produkter kunden har valgt.</p>
+                <p>Vårt neste steg er å faktisk legge produkter inn i lista vi har deklarert (opprettet). Her må vi opprette en funksjon.
+                    <u>En funksjon inneholder en eller flere kodelinjer som kan kjøres på et bestemt tidspunkt.</u> Følgende skrives i scripts.js:
+                </p>
+                <pre>
+function addItem(item) {
+    items.push(item);
+}
+                </pre>
+                <p>Her har vi laget en funksjon som heter 'addItem', som tar i mot et produkt og legger dette inn i lista vår.</p>
 
+                <p>Videre skal vi si i html-filen vår at denne skal kalles når vi trykker på knappen til et produkt. Vi legger inn følgende attributt i vår button-tag tilhørende et produkt: <code>onclick="addItem('produktNavn');"</code>
+                    (Her må du skrive selve navnet på produktet ditt og ikke <u>produktNavn</u>. Legg også merke til forskjell på enkeltsnutter (') og dobbeltsnutter ("))</p>
+
+                <p>For å teste at dette funker kan vi legge til en ny funksjon:</p>
+
+                <pre>
+function seeItems() {
+    if (items.length === 0) {
+        alert('Du har ikke valgt noe!');
+    }else{
+        alert('Du har valgt: ' + items);
+    }
+}
+                </pre>
+
+                <p>Og for å kalle på denne funksjonen legger vi til følgende attributt i knappen hvor det står 'Se handlekurv': <code>onclick="seeItems();"</code></p>
+                <p>Hvis du nå har gjort alt korrekt, så kan du forsøke å legge til et produkt i handlekurven også trykke på 'Se handlekurv', så skal du kunne se produktet du valgte komme opp som en varsel.</p>
+                <p><b>Oppgave:</b> Legg til funksjonalitet for knappen 'Tøm handlekurv'.</p>
             </div>
         </div>
 
