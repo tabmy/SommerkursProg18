@@ -36,6 +36,7 @@ function cartAdd(item) {
         for (var i = items.length-1; i >=0; i--){
             if (items[i] === item){
                 items.splice(i,1);
+                break;
             }
         }
         console.log("Fjerner " + item);
