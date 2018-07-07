@@ -53,7 +53,8 @@
     </ul>
 
     <p>
-        Enkelt forklart skal dere lage en mer interaktiv og intuitiv handlekurv enn tidligere, og jobbe med JavaScript for å oppnå dette.
+        Enkelt forklart skal dere lage en mer interaktiv og intuitiv handlekurv enn tidligere, og jobbe med JavaScript
+        for å oppnå dette.
     </p>
 
     <p>
@@ -62,13 +63,14 @@
 
     <ul>
         <li>HTML og CSS for å legge til visning av en handlekurv nederst på siden</li>
-        <li>Innføre JSON objekter for hvert av elementene man kan legge til i handlekurv</li>
         <li>Bruke Javascript for funksjonalitet til å legge til og slette elementer i handlekurven</li>
+        <li>Innføre JSON objekter for hvert av elementene man kan legge til i handlekurv</li>
     </ul>
 
     <h2>Oppgaver</h2>
 
-    <p>I dag skal vi starte med å lage designet til handlekurven, samt å legge til noe Javascript for å vise hvilke elementer man
+    <p>I dag skal vi starte med å lage designet til handlekurven, samt å legge til noe Javascript for å vise hvilke
+        elementer man
         kan har lagt til som varer i handlekurven.</p>
 
     <div class="panel-group">
@@ -79,28 +81,25 @@
                     lime inn følgende:</p>
 
                 <pre>
-                    &lt;!DOCTYPE html&gt;
-                    &lt;html lang=&quot;en&quot;&gt;
-                        &lt;head&gt;
-                            &lt;meta charset=&quot;UTF-8&quot;&gt;
-                            &lt;title&gt;OsloMet Progkurs Webshop&lt;/title&gt;
-                        &lt;/head&gt;
-                        &lt;body&gt;
-                            &lt;div class=&quot;container&quot;&gt;
-                            &lt;/div&gt;
-                        &lt;/body&gt;
-                    &lt;/html&gt;
+                    &lt;div class=&quot;items&quot;&gt;
+                        &lt;p&gt;Handlekurv:&lt;/p&gt;
+                        &lt;ul class=&quot;list-group&quot; id=&quot;handlekurv&quot;&gt;
+                            &lt;!-- Her skal elementene (list items) vises.
+                            List items lages med:
+                                &lt;li&gt;"navn på element"&lt;/li&gt;
+                                --&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
                 </pre>
 
-                <p>Dette er da basen til HTML-en. Vi skriver som nevnt i forelesning, kode som skal vise frem noe
-                    innenfor body-taggen, og importer av javascript og CSS-filer inne i head-taggen.</p>
+                <p>Dette er da HTML-en til handlekurven vi skal jobbe med. Vi skriver som nevnt i forelesning, kode som
+                    skal vise containeren til handlekurven.</p>
 
                 <p><b>Oppgave:</b></p>
 
-                <p>Legg til en overskrift (h1-tag) som er navnet på webshoppen din.</p>
+                <p>Legg til noen list items i handlekurven.</p>
 
-                <p>Lag to nye filer: en CSS-fil (med navn: style.css) og en Javascript-fil (scripts.js). Disse må du
-                    linke til fra html-filen din, og de vil være tomme inntil videre.</p>
+                <p>Prøv å bruke CSS til å style handlekurven slik du vil at den skal se ut.
 
                 <p></p>
 
@@ -108,19 +107,64 @@
         </div>
 
         <div class="panel panel-primary">
-            <div class="panel panel-heading">2. Navbar</div>
+            <div class="panel panel-heading">2. DOM-manipulasjon</div>
             <div class="panel-body">
                 <p>
-                    Neste steg er å legge til en navbar, altså en meny for å navigere rundt i forskjellige sider i
-                    webappen vår. Her skal vi bruke noen Bootstrap-klasser,
-                    men for å kunne bruke de må vi inkludere dem i HTML'en vår. Følgende linker må legges til:
+                    Neste steg er å begynne med DOM-manipulasjon. Det vil si endring av HTML-dokumentet, ofte ved bruk
+                    av JavaScript.
                 </p>
 
+                Her er et eksempel:
+
+                <script>
+                    var count = false;
+
+                    function test() {
+                        var element = document.getElementById('test')
+                        element.innerHTML = 'Du la til denne teksten';
+                        if (count) {
+                            element.style.display = 'none';
+                            count = false;
+                        }
+                        else {
+                            element.style.display = 'block';
+                            count = true;
+                        }
+                    }
+                </script>
+                <ul id="eksempel">
+                    <button onclick="test('potet')">
+                        Trykk på meg
+                    </button>
+                </ul>
+                <p id="test">
+                </p>
+
+                <p>Denne funksjonaliteten oppnår man med denne koden:</p>
                 <pre>
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;&gt;
-    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot; integrity=&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-                </pre>
+                &lt;script&gt;
+                    var count = false;
+
+                    function test() {
+                        var element = document.getElementById('test')
+                        element.innerHTML = 'Du la til denne teksten';
+                        if (count) {
+                            element.style.display = 'none';
+                            count = false;
+                        }
+                        else {
+                            element.style.display = 'block';
+                            count = true;
+                        }
+                    }
+                &lt;/script&gt;
+                &lt;ul id=&quot;eksempel&quot;&gt;
+                    &lt;button onclick=&quot;test('potet')&quot;&gt;
+                        Trykk p&aring; meg
+                    &lt;/button&gt;
+                &lt;/ul&gt;
+                &lt;p id=&quot;test&quot;&gt;
+                &lt;/p&gt; </pre>
 
 
                 <p>Videre skal vi bruke noen bootstrap klasser for navbaren vår. Her starter vi med å legge følgende

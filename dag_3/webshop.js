@@ -3,7 +3,6 @@ var num = 0;
 
 function addItem(item) {
     items.push(item);
-    console.log("La til " + item);
     cartAdd(item)
 }
 
@@ -29,7 +28,7 @@ function cartAdd(item) {
     var el = document.createElement('li');
     el.classList.add('list-group-item');
     el.id = id;
-    el.appendChild(document.createTextNode(item));
+    el.appendChild(document.createTextNode(item + " "));
     var fjernBtn = document.createElement('button');
     fjernBtn.appendChild(document.createTextNode('fjern'));
     fjernBtn.onclick = function () {
@@ -39,8 +38,10 @@ function cartAdd(item) {
                 items.splice(i,1);
             }
         }
+        console.log("Fjerner " + item);
     };
     fjernBtn.classList.add('btn','btn-danger');
     el.appendChild(fjernBtn);
-    kurv.appendChild(el)
+    kurv.appendChild(el);
+    console.log('Legger til ' + item)
 }
