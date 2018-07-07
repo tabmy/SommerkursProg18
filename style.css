@@ -1,6 +1,8 @@
 .container {
     background-color: #f1f1f1;
     font-size: 16px;
+    border-radius: 1vw;
+    border: 1px solid black;
 }
 
 div.panel.panel-primary{
