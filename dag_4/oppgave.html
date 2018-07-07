@@ -5,6 +5,7 @@
     <title>Oppgave dag 4</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
@@ -31,6 +32,225 @@
     <div class="headerLink">
         <a href="../dag_5/oppgave.html">Dag 5</a>
     </div>
+</div>
+<div class="container">
+    <h1>Oppgaver dag 4</h1>
+    <p>Frem til nå har vi kun sett på frontenden i en webapplikasjon, altså HTML, CSS og Javascript, som utgjør det en bruker ser når webapplikasjonen blir besøkt på nettet.
+        Det vi skal se på fremover er backenden av en webapplikasjon. Backenden består da av all bakenforeliggende logikk som brukeren ikke ser. Man ka se for seg hva som skjer når du søker på Google.
+    Da sender du kun inn en liten tekst til backenden som gjør masse matematiske operasjoner for deretter å returnere resultatet til deg.</p>
+
+    <p>Vi skal bruke Python for å demonstrere denne delen av en webapplikasjon, Python er et veldig kraftig programmeringsspråk,
+        som igjen vil si at vi trenger å skrive veldig få kodelinjer for å demonstrere hva vi ønsker.</p>
+
+    <p>Første delen av oppgaven består av rene programmeringsoppgaver som ikke har noe direkte med webshopen å gjøre, men vi skal forsøke å koble frontend med backend mot slutten av dagen og i morgen.</p>
+
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">1. Innstallering av PyCharm</div>
+            <div class="panel-body">
+                <p>Om du allerede har innstallert PyCharm og Flask (fra forelesning) og har opprettet et prosjekt, kan du gå videre til neste deloppgave.</p>
+                
+                <p>Første steg er å installere PyCharm fra <a href="https://www.jetbrains.com/pycharm/download/">Jetbrains</a>. Du velger selv om du vil installere Professional eller Community versjonen.
+                    Etter du har installert denne kan du åpne applikasjonen. Har du installert Professional, velger du å bruke prøve-versjonen.
+                </p>
+
+                <p>Når du åpner applikasjonen får du opp et valg om å lage et nytt prosjekt. Velg dette. Videre skal du sørge for at 'Pure Python' er markert,
+                    deretter kan du bare trykke deg videre til slutten av oppsettet uten noen videre endringer.</p>
+
+                <p>Det neste er å installere Flask. Flask er et rammeverk, som vil si kode som er skrevet av noen andre, for at vi kan bruke det til å løse et problem. Dette innstallerer du følgende:</p>
+
+                <ol>
+                    <li>Trykk på 'File' -> 'Default Settings' -> 'Project Interpreter'</li>
+                    <li>Hvis valget for 'Project Interpreter' her er tomt, velger du Python versjonen du har tilgjengelig.</li>
+                    <li>Etter du har valgt Python-versjon kan du trykke på '+'-tegnet nederst til venstre.</li>
+                    <li>Søk deretter etter 'Flask', velg 'Flask' og trykk på 'Install Package'.</li>
+                </ol>
+
+                <p>Du er nå klar til å gå videre til neste oppgave.</p>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">2. Programmering - variabler</div>
+            <div class="panel-body">
+               <p>Lag en ny Python-fil 'test.py' i prosjektmappen din. Skriv inn følgende kode:</p>
+                <pre>print('Hello World!')</pre>
+                <p>Høyreklikk i tekst-vinduet og trykk på 'Run test'. Du har nå kjørt ditt første Python-program!</p>
+
+                <p>Vi skal nå se videre på variabler i Python. Variabler i Python er det samme som i Javascript, som vi har vært borti tidligere. En variabel kan holde på en bestemt verdi. Type verdier en variabel kan holde på:</p>
+
+                <ul>
+                    <li>Tekststrenger</li>
+                    <li>Tallverdier</li>
+                    <li>Boolske verdier (true / false)</li>
+                </ul>
+
+                <p>Eksempler på hvordan man lager variabler i Python:</p>
+                <pre>
+                tall = 10
+                tekst = 'Hei på deg'
+                sant = true</pre>
+                <p>Prøver du å printe disse, f.eks. <code>print(tall)</code>, vil du se at verdien blir skrevet ut.</p>
+
+                <p><b>Oppgaver:</b></p>
+
+                <ol>
+                    <li>Hva skjer om du legger sammen to tekststrenger? Prøv det ut. (eks <code>resultat = tekst1 + tekst2</code>)</li>
+                    <li>Prøv ut de forskjellige matematiske opeasjonene (+, -, *, /)</li>
+                    <li>Print ut følgende: <code>'abcdef'.__len__</code>. Forklar hva som printes ut.</li>
+                    <li>Skriv følgende Python kode:
+                    <pre>
+tall = input('Skriv et tall:')
+print(tall)
+                    </pre>
+                        <p>Når du kjører dette programmet kan du skrive inn input i konsollen. Lag med dette en kalkulator som adderer to tall sammen.</p>
+                    </li>
+                </ol>
+
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">3. Programmering - if/else</div>
+            <div class="panel-body">
+                <p>En if/else struktur i programmering kan validere forskjellige tilfeller og deretter utføre riktig kode basert på tilstanden til for eksempel en variabel. Her er et eksempel:</p>
+                <pre>
+tall = 4
+if tall is 3:
+    print('Tallet er 3')
+else:
+    print('Tallet er ikke 3')
+                </pre>
+                <p>Her har vi deklarert en variabel som har verdien 3. Deretter sjekkes det om variabelen har verdien 3, om dette er sant blir 'Tallet er  3', om det ikke er sant, skrive 'Tallet er ikke 3' ut i konsollen.</p>
+
+                <p><b>Oppgaver:</b></p>
+
+                <ol>
+                    <li>Diskuter med en medelev om hva følgende kode gjør. Hva betyr/gjør 'elif' (kort for 'else if')? <pre>tall = 10
+if tall * 2 is 10:
+    print('Hei på deg')
+elif tall * 2 - 10 is not 10:
+    print('Hallelujah!')
+else:
+    print('Fy!')
+                    </pre>
+                    </li>
+                    <li>Diskuter med en medelev om hva følgende kode gjør. <pre>tall = 10
+if tall > is 10:
+    print('Hei på deg')
+else:
+    print('Fy!')
+                    </pre>
+                    </li>
+                    <li>Bruk 'input'-koden fra forrige deloppgave (2. Programmering - variabler), og print ut 'HURRA!' om tallene som skrives inn har en samlet verdi på mer enn 10. </li>
+                </ol>
+
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">4. Programmering - funksjoner</div>
+            <div class="panel-body">
+
+                <p>En funksjon er en blokk med kode som kan kjøres på et bestemt tidspunkt, de fungerer på samme måte i Python som i Javascript, men de skrives litt annerledes. Prøv følgende kode og diskuter med en medstudent:</p>
+                <pre>
+def printHei():
+    print('hei')
+
+printHei()</pre>
+                <p>Funksjoner kan også returnere verdier. Diskuter med medstudent hva følgende kode gjør:</p>
+                <pre>
+def returnerTall():
+    return 2
+
+tall = returnerTall()
+print(tall)
+                </pre>
+
+                <p>Funksjoner kan også ta i mot verdier (parameter). Diskuter med en medelev hva følgende kode gjør:</p>
+                <pre>def trekkFraTo(tall):
+    return tall - 2
+
+resultat = trekkFraTo(10)
+print(resultat)
+                </pre>
+                <p><b>Oppgaver:</b></p>
+
+                <ol>
+                    <li>Lag en funksjon som tar i mot to tall og returnere summen av disse</li>
+                </ol>
+
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">5. Programmering - Flask, API'er</div>
+            <div class="panel-body">
+                <p>Opprett en ny python fil 'server.py'. I denne kan du skrive følgende kode:</p>
+                <pre>
+from flask import Flask
+app = Flask(__name__)
+#ALL NY KODE SKAL SKRIVES MELLOM HER
+app.run()</pre>
+
+                <p>Det er ikke nødvendig å tenke på hva koden her betyr, men kort fortalt er dette koden som trengs for å starte en 'web-server'.</p>
+                <p>Før du går videre er det smart å lese om GET og POST-metoder <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">HER.</a></p>
+
+                <p>Videre kan du legge til følgende kode (husk å skrive det FØR 'app.run()':</p>
+
+                <pre>@app.route('/')
+def hello_world():
+    return 'Hello world'</pre>
+
+                <p>Du kan nå kjøre programmet. Trykker du på linken som kom opp i konsollen (eller går inn på <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> vil du kjenne igjen teksten som kom opp.</p>
+
+                <p>Vi ser vi har laget en funksjon som blir kalt på når vi går inn på en bestemt URL (nettadresse). Hva skjer om du endrer på @app.route('/') til @app.route('/hello')?
+                    Vi kaller disse URL'ene API-endepunkt. Gratulerer, du har nå laget ditt første API!</p>
+
+                <p>Vi skal nå lage et API som tar i mot et tall og returnerer tallet ganget med to. Legg først til <code>from flask import request</code> øverst i filen. Det kan implementeres slik:</p>
+
+                <pre>@app.route('/double', methods=['GET'])
+def double():
+    tall = int(request.args['tall'])
+    resultat = str(tall * 2)
+    return resultat
+</pre>
+                <p>Kjører du programmet nå, kan du prøve å gå inn på <a href="http://127.0.0.1:5000/double?tall=10">http://127.0.0.1:5000/double?tall=10</a>. Hvilket resultat får du? Endre linken slik at du får 100 som resultat.</p>
+
+                <p><code>request.args['tall']</code> returnerer verdien du har gitt til 'tall' i URL'en. Ser du på koden så ser du det står int(...) rundt dette.
+                    Dette er fordi request.args['tall'] gir oss tallet som en tekst-streng, mens vi må ha den som en tallverdi for å gjør matematiske operasjoner på denne.
+                    Funksjonen int() forvandler en tekststreng om til en tallverdi.</p>
+
+                <p>Vi må også returnere en tekst til brukeren for at API'et skal fungere. Derfor skriver vi str() rundt <code>tall * 2</code>. str() gjør om tall til tekststrenger.</p>
+
+
+                <p><b>Oppgaver:</b></p>
+
+                <ol>
+
+                    <li><b>UTFORDRING:</b> Lag et API som tar i mot to tall og returnerer summen.</li>
+                </ol>
+
+            </div>
+        </div>
+
+
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">6. Er du ferdig?</div>
+            <div class="panel-body">
+                <p><b>Ekstraoppgaver</b></p>
+                <p>1. Er du ferdig med alle oppgavene her nå så skal du gå gjennom alle oppgaver fra dag 2 og dag 3, og sørge for at du har gjort alle oppgavene frem til nå.</p>
+
+                <p>2. Sørg for at du skjønner forskjellen på en 'GET' og en 'POST'. Hittil har vi kun brukt en av metodene. Hvilken? </p>
+                <p>3. Last ned <a href="https://www.getpostman.com/">Postman</a>. Søk gjerne litt på Youtube eller lignende om hva det er for noe.</p>
+                <p>4. Prøv å kalle på et av API'ene du har laget gjennom Postman.</p>
+                <p>5. Gjør om en av funksjonene om til en POST. <u>Du må endre request.args['tall'] om til request.json['tall'])</u>
+                    Prøv å finne ut på egen hånd hvordan du sender en POST-request gjennom Postman. Sitter du fast så ta kontakt med en av foreleserene! :) </p>
+
+            </div>
+        </div>
+
+    </div>
+
 </div>
 </body>
 </html>
