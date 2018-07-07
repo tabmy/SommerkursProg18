@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Oppgave dag 3</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="../script.js"></script>
 </head>
 <body>
 <div class="header">
@@ -30,6 +34,218 @@
     </div>
     <div class="headerLink">
         <a href="../dag_5/oppgave.html">Dag 5</a>
+    </div>
+</div>
+<div class="container">
+    <h1>Oppgave dag 3</h1>
+
+    <h2>Forord</h2>
+
+    <p>I dag skal vi fortsette med webshop, og introdusere noen nye konsepter som vil gjøre det lettere å holde orden på
+        elementer og verdier, samt manipulering av DOM (Document Object Model).
+    </p>
+    <p>Webshoppen skal kunne..</p>
+    <ul>
+        <li>Vise visuelt hva som er i handlekurven</li>
+        <li>Slette enkeltelementer fra handlekurven</li>
+        <li>Dynamisk oppdatere handlekurven</li>
+        <li>Vise totalsummen av elementer i handlekurven</li>
+    </ul>
+
+    <p>
+        Enkelt forklart skal dere lage en mer interaktiv og intuitiv handlekurv enn tidligere, og jobbe med JavaScript for å oppnå dette.
+    </p>
+
+    <p>
+        De tekniske målene for dagen er:
+    </p>
+
+    <ul>
+        <li>HTML og CSS for å legge til visning av en handlekurv nederst på siden</li>
+        <li>Innføre JSON objekter for hvert av elementene man kan legge til i handlekurv</li>
+        <li>Bruke Javascript for funksjonalitet til å legge til og slette elementer i handlekurven</li>
+    </ul>
+
+    <h2>Oppgaver</h2>
+
+    <p>I dag skal vi starte med å lage designet til handlekurven, samt å legge til noe Javascript for å vise hvilke elementer man
+        kan har lagt til som varer i handlekurven.</p>
+
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">1. Oppsett av handlekurven</div>
+            <div class="panel-body">
+                <p>Vi starter først med å åpne HTML-filen vi lagde i går. Inne i denne kan du starte med å
+                    lime inn følgende:</p>
+
+                <pre>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang=&quot;en&quot;&gt;
+                        &lt;head&gt;
+                            &lt;meta charset=&quot;UTF-8&quot;&gt;
+                            &lt;title&gt;OsloMet Progkurs Webshop&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;div class=&quot;container&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+                </pre>
+
+                <p>Dette er da basen til HTML-en. Vi skriver som nevnt i forelesning, kode som skal vise frem noe
+                    innenfor body-taggen, og importer av javascript og CSS-filer inne i head-taggen.</p>
+
+                <p><b>Oppgave:</b></p>
+
+                <p>Legg til en overskrift (h1-tag) som er navnet på webshoppen din.</p>
+
+                <p>Lag to nye filer: en CSS-fil (med navn: style.css) og en Javascript-fil (scripts.js). Disse må du
+                    linke til fra html-filen din, og de vil være tomme inntil videre.</p>
+
+                <p></p>
+
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">2. Navbar</div>
+            <div class="panel-body">
+                <p>
+                    Neste steg er å legge til en navbar, altså en meny for å navigere rundt i forskjellige sider i
+                    webappen vår. Her skal vi bruke noen Bootstrap-klasser,
+                    men for å kunne bruke de må vi inkludere dem i HTML'en vår. Følgende linker må legges til:
+                </p>
+
+                <pre>
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot; integrity=&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+                </pre>
+
+
+                <p>Videre skal vi bruke noen bootstrap klasser for navbaren vår. Her starter vi med å legge følgende
+                    kode:</p>
+
+                <pre>
+     &lt;nav class=&quot;navbar navbar-default&quot;&gt;
+        &lt;div class=&quot;container-fluid&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;#&quot;&gt;Hjem&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+     &lt;/nav&gt;
+                </pre>
+
+                <p>Nå kan vi se at vi har fått en meny øverst på hjemmesiden vår. Prøv å endre på teksten i HTML slik at
+                    det står noe annet enn 'Hjem' helt til venstre i menyen din.</p>
+                <p><b>Oppgave: </b>Når du har gjort dette, kan du legge til to knapper (button), hvor det skal stå <b>'Tøm
+                    handlekurv'</b> på den ene, og <b>'Se handlekurv'</b> på den andre.
+                    Disse kan du også style, enten ved å bruke <a href="https://getbootstrap.com/docs/3.3/css/#buttons">Bootstrap
+                        buttons</a>, eller med ren CSS om du ønsker en utfordring.</p>
+
+                <p>Hvis du ønsker å designe din egen navbar, kan du bruke <a
+                        href="https://getbootstrap.com/docs/3.3/components/#navbar">følgende link</a> for eksempler på
+                    hvordan du gjør det med Bootstrap,
+                    eller så kan du forsøke å gjøre det med ren HTML/CSS. Viktig at du fortsatt har med knappene vi
+                    lagde nylig.</p>
+
+            </div>
+        </div>
+
+
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">3. Liste produkt</div>
+            <div class="panel-body">
+                <p>Nå skal vi vise frem produktene våre på webshopen vår. For å gjøre siden vår penest mulig bestemmer
+                    vi oss for å bruke bilder som kun er av størrelse 640x480. Gå inn på Google og finn noen bilder
+                    av produkter du ønsker å ha med (mobiltelefon/datamaskin/potet etc.). Lagre disse bildene i samme
+                    mappe som resten av filene dine.</p>
+
+                <p>For å enkelt kunne vise frem produktene med minst mulig HTML-kode skal vi benytte oss av
+                    Bootstrap-klasser som bruker for å vise lister på en nettside. Du kan starte med å lage en ul-tag
+                    inne i div-taggen med container-klassen. 'ul' står for 'Unordered list'. Denne nye ul-taggen skal ha
+                    følgende attributt: <code>class="list-group"</code>.</p>
+
+                <p>Inne i din nye ul-tag, kan du lage en ny li-tag. 'li' er et element i en liste. Denne skal ha <code>list-group-item</code>
+                    som class. En li med <code>list-group-item</code> vil da representere <b>et</b> produkt.</p>
+
+                <p><b>Oppgave:</b>Når du er ferdig med dette skal du legge til bilde og tekst av produktet, og en knapp
+                    med teksten 'Legg i handlekurv' på. <i>Om du sitter fast kan du trykke på knappen under og se et
+                        løsningsforslag.</i></p>
+
+                <button class="btn btn-default" onclick="showExample('example1');">Se løsningsforslag</button>
+
+                <div id="example1" style="display: none;">
+                    <pre>
+        &lt;ul class=&quot;list-group&quot;&gt;
+            &lt;li class=&quot;list-group-item&quot;&gt;
+                &lt;img class=&quot;produkt&quot; src=&quot;../img/mobil.png&quot;&gt;
+                Mobil
+                &lt;button class=&quot;btn btn-success&quot;&gt;
+                    Legg til
+                &lt;/button&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;</pre>
+                </div>
+
+                <p>Legg også til flere produkter, slik at du totalt har 3 produkter tilgjengelig.</p>
+
+            </div>
+        </div>
+
+
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">4. Legge til produkt i handleliste</div>
+            <div class="panel-body">
+                <p>Vi har nå laget all HTML og CSS for første versjon av webshoppen vår. Nå skal vi videre legge til
+                    funksjonalitet for å legge til produkter i en 'handleliste'. For å gjøre dette må vi bruke
+                    Javascript.</p>
+                <p>Det første vi kan gjøre er å skrive følgende inn i Javascript filen vår (script.js): <code>var items
+                    = [];</code></p>
+                <p>Her har vi laget en <i>variabel</i> som vi har kalt for 'items'. Denne har fått verdien '[ ]', som er
+                    en liste/tabell. I denne listen kan vi legge til forskjellige type verdier.
+                    I vårt tilfelle skal vi legge inn hvilke produkter kunden har valgt.</p>
+                <p>Vårt neste steg er å faktisk legge produkter inn i lista vi har deklarert (opprettet). Her må vi
+                    opprette en funksjon.
+                    <u>En funksjon inneholder en eller flere kodelinjer som kan kjøres på et bestemt tidspunkt.</u>
+                    Følgende skrives i scripts.js:
+                </p>
+                <pre>
+function addItem(item) {
+    items.push(item);
+}
+                </pre>
+                <p>Her har vi laget en funksjon som heter 'addItem', som tar i mot et produkt og legger dette inn i
+                    lista vår.</p>
+
+                <p>Videre skal vi si i html-filen vår at denne skal kalles når vi trykker på knappen til et produkt. Vi
+                    legger inn følgende attributt i vår button-tag tilhørende et produkt: <code>onclick="addItem('produktNavn');"</code>
+                    (Her må du skrive selve navnet på produktet ditt og ikke <u>produktNavn</u>. Legg også merke til
+                    forskjell på enkeltsnutter (') og dobbeltsnutter ("))</p>
+
+                <p>For å teste at dette funker kan vi legge til en ny funksjon:</p>
+
+                <pre>
+function seeItems() {
+    if (items.length === 0) {
+        alert('Du har ikke valgt noe!');
+    }else{
+        alert('Du har valgt: ' + items);
+    }
+}
+                </pre>
+
+                <p>Og for å kalle på denne funksjonen legger vi til følgende attributt i knappen hvor det står 'Se
+                    handlekurv': <code>onclick="seeItems();"</code></p>
+                <p>Hvis du nå har gjort alt korrekt, så kan du forsøke å legge til et produkt i handlekurven også trykke
+                    på 'Se handlekurv', så skal du kunne se produktet du valgte komme opp som en varsel.</p>
+                <p><b>Oppgave:</b> Legg til funksjonalitet for knappen 'Tøm handlekurv'.</p>
+            </div>
+        </div>
+
+
     </div>
 </div>
 </body>
