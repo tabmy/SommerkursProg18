@@ -118,19 +118,9 @@
                 Her er et eksempel:
 
                 <script>
-                    var count = false;
-
                     function test() {
                         var element = document.getElementById('test')
                         element.innerHTML = 'Du la til denne teksten';
-                        if (count) {
-                            element.style.display = 'none';
-                            count = false;
-                        }
-                        else {
-                            element.style.display = 'block';
-                            count = true;
-                        }
                     }
                 </script>
                 <ul id="eksempel">
@@ -144,64 +134,120 @@
                 <p>Denne funksjonaliteten oppnår man med denne koden:</p>
                 <pre>
                 &lt;script&gt;
+                    function test() {
+                        var element = document.getElementById('test')
+                        element.innerHTML = 'Du la til denne teksten';
+
+                    }
+                &lt;/script&gt;
+                &lt;ul id=&quot;eksempel&quot;&gt;
+                    &lt;button onclick=&quot;test()&quot;&gt;
+                        Trykk p&aring; meg
+                    &lt;/button&gt;
+                &lt;/ul&gt;
+                &lt;p id=&quot;test&quot;&gt;
+                &lt;/p&gt;
+                </pre>
+
+                <br>
+                <p>Videre kan man legge til betingelser (en if-test) som gjør at man kan endre oppførsel avhengig av
+                    betingelser:</p>
+
+                <script>
+                    var count = false;
+
+                    function test2() {
+                        var element = document.getElementById('test2')
+                        element.innerHTML = 'Du la til denne teksten';
+                        var btn = document.getElementById('btn');
+                        if (count) {
+                            element.style.display = 'none';
+                            count = false;
+                            btn.innerText = "Trykk på meg";
+                        }
+                        else {
+                            element.style.display = 'block';
+                            count = true;
+                            btn.innerText = "Trykk på meg igjen"
+                        }
+                    }
+                </script>
+                <ul id="eksempel2">
+                    <button id="btn" onclick="test2()">
+                        Trykk på meg
+                    </button>
+                </ul>
+                <p id="test2">
+                </p>
+
+                <br>
+                <p>Dette kan du få til ved å endre JavaScript-koden til følgende:</p>
+                <pre>
                     var count = false;
 
                     function test() {
                         var element = document.getElementById('test')
                         element.innerHTML = 'Du la til denne teksten';
+                        var btn = document.getElementById('btn');
                         if (count) {
                             element.style.display = 'none';
                             count = false;
+                            btn.innerText = &quot;Trykk p&aring; meg&quot;;
                         }
                         else {
                             element.style.display = 'block';
                             count = true;
+                            btn.innerText = &quot;Trykk p&aring; meg igjen&quot;
                         }
                     }
-                &lt;/script&gt;
-                &lt;ul id=&quot;eksempel&quot;&gt;
-                    &lt;button onclick=&quot;test('potet')&quot;&gt;
-                        Trykk p&aring; meg
-                    &lt;/button&gt;
-                &lt;/ul&gt;
-                &lt;p id=&quot;test&quot;&gt;
-                &lt;/p&gt; </pre>
-
-
-                <p>Videre skal vi bruke noen bootstrap klasser for navbaren vår. Her starter vi med å legge følgende
-                    kode:</p>
-
-                <pre>
-     &lt;nav class=&quot;navbar navbar-default&quot;&gt;
-        &lt;div class=&quot;container-fluid&quot;&gt;
-            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
-                &lt;li&gt;
-                    &lt;a href=&quot;#&quot;&gt;Hjem&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-     &lt;/nav&gt;
                 </pre>
 
-                <p>Nå kan vi se at vi har fått en meny øverst på hjemmesiden vår. Prøv å endre på teksten i HTML slik at
-                    det står noe annet enn 'Hjem' helt til venstre i menyen din.</p>
-                <p><b>Oppgave: </b>Når du har gjort dette, kan du legge til to knapper (button), hvor det skal stå <b>'Tøm
-                    handlekurv'</b> på den ene, og <b>'Se handlekurv'</b> på den andre.
-                    Disse kan du også style, enten ved å bruke <a href="https://getbootstrap.com/docs/3.3/css/#buttons">Bootstrap
-                        buttons</a>, eller med ren CSS om du ønsker en utfordring.</p>
+                <p>I tillegg må du gi knappen en ID:</p>
 
-                <p>Hvis du ønsker å designe din egen navbar, kan du bruke <a
-                        href="https://getbootstrap.com/docs/3.3/components/#navbar">følgende link</a> for eksempler på
-                    hvordan du gjør det med Bootstrap,
-                    eller så kan du forsøke å gjøre det med ren HTML/CSS. Viktig at du fortsatt har med knappene vi
-                    lagde nylig.</p>
+                <pre>
+                     &lt;ul id=&quot;eksempel&quot;&gt;
+                        &lt;button id="btn" onclick=&quot;test()&quot;&gt;
+                            Trykk p&aring; meg
+                        &lt;/button&gt;
+                    &lt;/ul&gt;
+                    &lt;p id=&quot;test&quot;&gt;
+                    &lt;/p&gt;
+                </pre>
 
+                <p>Nå ser vi at man kan bruke JavaScript til å manipulere DOM (HTML) på nettsiden vår.</p>
+
+                <p><b>Oppgave:</b>
+                <p>Legg JavaScript-koden i JavaScript filen din (script.js) og se til at den fungerer på samme måte der.</p>
+                <p>Når du har gjort dette, kan du legge til funksjonalitet for å endre handlekurven basert på elementer lagt til i den.</p>
+
+                <p>Start med å endre teksten i handlekurven til å vise det siste elementet lagt til. Eksempel "Datamaskin" eller "Mobil"</p>
+
+                <button class="btn btn-default" onclick="showExample('example1')">Se løsningsforslag</button>
+                <div id="example1" style="display: none;">
+                    <pre>
+                        function addItem(item) {
+                            items.push(item);
+                            cartAdd(item);
+                        }
+
+                        function cartAdd(item){
+                            var kurv = document.getElementById('handlekurv');
+                            var el = document.createElement('li');
+                            el.classList.add('list-group-item');
+                            el.appendChild(document.createTextNode(item + " "));
+                            kurv.appendChild(el);
+                        }
+
+                        Må nok endres på - slik at den endrer "inner HTML" til å vise siste "item" lagt til.
+                        resten av eksempelet skal brukes i senere "modul"+oppgave.
+                    </pre>
+                </div>
             </div>
         </div>
 
 
         <div class="panel panel-primary">
-            <div class="panel panel-heading">3. Liste produkt</div>
+            <div class="panel panel-heading">3. Legge til / fjerne HTML i handlekurv</div>
             <div class="panel-body">
                 <p>Nå skal vi vise frem produktene våre på webshopen vår. For å gjøre siden vår penest mulig bestemmer
                     vi oss for å bruke bilder som kun er av størrelse 640x480. Gå inn på Google og finn noen bilder
@@ -222,7 +268,7 @@
 
                 <button class="btn btn-default" onclick="showExample('example1');">Se løsningsforslag</button>
 
-                <div id="example1" style="display: none;">
+                <div id="example2" style="display: none;">
                     <pre>
         &lt;ul class=&quot;list-group&quot;&gt;
             &lt;li class=&quot;list-group-item&quot;&gt;

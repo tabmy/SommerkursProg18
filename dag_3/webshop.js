@@ -24,11 +24,13 @@ function clearItems() {
 
 function cartAdd(item) {
     var kurv = document.getElementById('handlekurv');
-    var id = "element" + num++;
     var el = document.createElement('li');
     el.classList.add('list-group-item');
+    var id = "element" + num++;
     el.id = id;
     el.appendChild(document.createTextNode(item + " "));
+
+
     var fjernBtn = document.createElement('button');
     fjernBtn.appendChild(document.createTextNode('fjern'));
     fjernBtn.onclick = function () {
@@ -43,6 +45,8 @@ function cartAdd(item) {
     };
     fjernBtn.classList.add('btn','btn-danger');
     el.appendChild(fjernBtn);
+
+
     kurv.appendChild(el);
     console.log('Legger til ' + item)
 }
