@@ -284,8 +284,7 @@
                     function outputTest(text) {
                         var ul = document.getElementById('inputUl');
                         var outputLi = document.createElement('li');
-                        var outputText = document.createTextNode(text);
-                        outputLi.appendChild(outputText);
+                        outputLi.innerText = text;
                         ul.appendChild(outputLi);
                     }
                 </script>
@@ -318,8 +317,7 @@
                     function outputTest(text) {
                         var ul = document.getElementById('inputUl');
                         var outputLi = document.createElement('li');
-                        var outputText = document.createTextNode(text);
-                        outputLi.appendChild(outputText);
+                        outputLi.innerText = text;
                         ul.appendChild(outputLi);
                     }
                     &lt;/script&gt;
