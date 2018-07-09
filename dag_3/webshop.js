@@ -26,11 +26,11 @@ function clearItems() {
 
 function cartAdd(item) {
     var kurv = document.getElementById('handlekurv');
-    var el = document.createElement('li');
-    el.classList.add('list-group-item');
+    var element = document.createElement('li');
+    element.classList.add('list-group-item');
     var id = "element" + num++;
-    el.id = id;
-    el.appendChild(document.createTextNode(item + " "));
+    element.id = id;
+    element.appendChild(document.createTextNode(item + " "));
 
      /*
      Legger til en button til hvert listeelement
@@ -49,11 +49,11 @@ function cartAdd(item) {
         console.log("Fjerner " + item);
     };
     fjernBtn.classList.add('btn','btn-danger');
-    el.appendChild(fjernBtn);
+    element.appendChild(fjernBtn);
 
 
-    kurv.appendChild(el);
-    console.log('Legger til ' + item)
+    kurv.appendChild(element);
+    console.log('Legger til ' + item);
 }
 
 

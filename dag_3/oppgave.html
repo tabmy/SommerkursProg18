@@ -150,10 +150,12 @@
                 </pre>
 
                 <br>
-                <p>Videre kan man legge til betingelser (en if/else-test) som gjør at man kan endre oppførsel avhengig av
+                <p>Videre kan man legge til betingelser (en if/else-test) som gjør at man kan endre oppførsel avhengig
+                    av
                     betingelser.</p>
                 <p>Les gjerne mer om "if/else-test" <a href="https://www.w3schools.com/js/js_if_else.asp">her</a>
-                    <i>(dere trenger ikke lære om if/else ennå, men ta gjerne en titt hvis det virker interessant).</i></p>
+                    <i>(dere trenger ikke lære om if/else ennå, men ta gjerne en titt hvis det virker interessant).</i>
+                </p>
                 <script>
                     var count = false;
 
@@ -225,9 +227,11 @@
 
                 <p>Start med å endre teksten i handlekurven til å vise det siste elementet lagt til. Eksempel
                     "Datamaskin" eller "Mobil"</p>
-                <p><b>Tips:</b> Se på funksjonen "function test()" i eksempelet over, og lag en funksjon i ditt script.js-dokument som ligner.</p>
+                <p><b>Tips:</b> Se på funksjonen "function test()" i eksempelet over, og lag en funksjon i ditt
+                    script.js-dokument som ligner.</p>
 
-                <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslaget under:</i>
+                <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslaget
+                    under:</i>
                 <br>
                 <button class="btn btn-default" onclick="showExample('hint1')">Se hint</button>
                 <div id="hint1" style="display: none;">
@@ -258,61 +262,47 @@
         <div class="panel panel-primary">
             <div class="panel panel-heading">3. Legge til HTML i handlekurv</div>
             <div class="panel-body">
-                <p>Nå skal vi vise hvilke produkter som ligger i handlekurven vår. Dette oppnår vi ved bruk av DOM-manipulasjon og å legge til HTML i form av list-items i listen vår.</p>
+                <p>Nå skal vi vise hvilke produkter som ligger i handlekurven vår. Dette oppnår vi ved bruk av
+                    DOM-manipulasjon og å legge til HTML i form av list-items i listen vår.</p>
 
-                <p>Eksempelet under viser hvordan man kan legge til list-items i en liste. Det er i tillegg lagt til funksjonalitet for å velge tekst som skal legges til i listen.</p>
-                <p>Dette vil kun bli brukt som eksempel på hva som er mulig, og det er ikke nødvendig å forstå all JavaScript-koden.</p>
-                <p>Legg spesielt merke til <i>outputTest(text)</i>-funksjonen. Den ligner veldig på den vi kommer til å bruke videre.</p>
+                <p>Eksempelet under viser hvordan man kan legge til list-items i en liste. Det er i tillegg lagt til
+                    funksjonalitet for å velge tekst som skal legges til i listen.</p>
+                <p>Dette vil kun bli brukt som eksempel på hva som er mulig, og det er ikke nødvendig å forstå all
+                    JavaScript-koden.</p>
+                <p>Legg spesielt merke til <i>outputTest(text)</i>-funksjonen. Den ligner veldig på den vi kommer til å
+                    bruke videre.</p>
 
                 <script>
-                    var count = 0;
                     function inputTest() {
                         var text = document.getElementById('inputText').value;
-                        if (count < 3) {
-                            outputTest(text);
-                            count++;
-                            if (count === 3){
-                                document.getElementById('inputBtn').innerHTML = "Klikk én gang til";
-                            }
-                        }
-                        else {
-                            count = 0;
-                            document.getElementById('inputBtn').innerHTML = "Trykk på meg";
-                            document.getElementById('inputUl').innerHTML = "";
-                        }
+                        outputTest(text);
                     }
+
                     function outputTest(text) {
                         var ul = document.getElementById('inputUl');
                         var outputLi = document.createElement('li');
                         outputLi.innerText = text;
                         ul.appendChild(outputLi);
                     }
+
+                    function deleteTest() {
+                        document.getElementById('inputUl').innerHTML = "";
+                    }
                 </script>
-                <button id="inputBtn" onclick="inputTest()">Trykk på meg</button>
+                <button onclick="inputTest()">Trykk på meg</button>
                 <input id="inputText" type="text">
+                <button onclick="deleteTest()">Slett liste</button>
                 <ul id="inputUl">
                 </ul>
 
                 <p>Dette oppnår man med koden under.</p>
-                <p>Dere trenger ikke kunne dette, og vi kommer ikke til å bruke <i>input</i> noe videre i dette kurset.</p>
+                <p>Dere trenger ikke kunne dette, og vi kommer ikke til å bruke <i>input</i> noe videre i dette kurset.
+                </p>
                 <pre>
                     &lt;script&gt;
-                    <span style="opacity: 0.3">
-                    var count = 0;</span>
                     function inputTest() {
-                        var text = document.getElementById('inputText').value;<span style="opacity: 0.3">
-                        if (count &lt; 3) {</span>
-                            outputTest(text);<span style="opacity: 0.3">
-                            count++;
-                            if (count === 3){
-                                document.getElementById('inputBtn').innerHTML = &quot;Klikk &eacute;n gang til&quot;;
-                            }
-                        }
-                        else {
-                            count = 0;
-                            document.getElementById('inputBtn').innerHTML = &quot;Trykk p&aring; meg&quot;;
-                            document.getElementById('inputUl').innerHTML = &quot;&quot;;
-                        }</span>
+                        var text = document.getElementById('inputText').value;
+                        outputTest(text);
                     }
                     function outputTest(text) {
                         var ul = document.getElementById('inputUl');
@@ -320,49 +310,58 @@
                         outputLi.innerText = text;
                         ul.appendChild(outputLi);
                     }
+                    function deleteTest() {
+                        document.getElementById('inputUl').innerHTML = "";
+                    }
                     &lt;/script&gt;
 
-                &lt;button id=&quot;inputBtn&quot; onclick=&quot;inputTest()&quot;&gt;Trykk p&aring; meg&lt;/button&gt;
+                &lt;button onclick=&quot;inputTest()&quot;&gt;Trykk p&aring; meg&lt;/button&gt;
                 &lt;input id=&quot;inputText&quot; type=&quot;text&quot;&gt;
+                &lt;button onclick=&quot;deleteTest()&quot;&gt;Slett liste&lt;/button&gt;
                 &lt;ul id=&quot;inputUl&quot;&gt;
                 &lt;/ul&gt;
                 </pre>
 
-                <p>For å enkelt kunne vise frem produktene med minst mulig HTML-kode skal vi benytte oss av
-                    Bootstrap-klasser som bruker for å vise lister på en nettside. Du kan starte med å lage en ul-tag
-                    inne i div-taggen med container-klassen. 'ul' står for 'Unordered list'. Denne nye ul-taggen skal ha
-                    følgende attributt: <code>class="list-group"</code>.</p>
+                <p>Det er mye mer oversiktlig og visuelt å se beskrivelse av elementene i handlelisten vår.</p>
 
-                <p>Inne i din nye ul-tag, kan du lage en ny li-tag. 'li' er et element i en liste. Denne skal ha <code>list-group-item</code>
-                    som class. En li med <code>list-group-item</code> vil da representere <b>et</b> produkt.</p>
+                <p>Ved å bruke JavaScript kan vi enkelt legge til HTML-elementer i listen vår når vi trykker på <i>"legg
+                    til"</i>, altså når vi "kaller" på funksjonen <i>addItem</i>.</p>
 
-                <p><b>Oppgave:</b>Når du er ferdig med dette skal du legge til bilde og tekst av produktet, og en knapp
-                    med teksten 'Legg i handlekurv' på. <i>Om du sitter fast kan du trykke på knappen under og se et
-                        løsningsforslag.</i></p>
+                <p><b>Oppgave:</b> Lag JavaScript-kode som gjør at handlekurven viser elementer som du trykker <i>"legg
+                    til"</i> på.</p>
+                <p>
+                    <b>Tips:</b> se på løsningsforslaget til oppgave 2 og utvid (jobb videre med) koden som står der.
+                </p>
 
-                <button class="btn btn-default" onclick="showExample('example1');">Se løsningsforslag</button>
 
+                <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslaget
+                    under:</i>
+                <br>
+
+                <button class="btn btn-default" onclick="showExample('hint2')">Se hint</button>
+
+                <div id="hint2" style="display: none">
+                    <p>Se på hvordan <i>outputTest()</i> bruker <i>document.CreateElement</i> og <i>appendChild</i>.
+                        Prøv å gjøre det samme i handlekurven din.</p>
+                </div>
+                <button class="btn btn-default" onclick="showExample('example2');">Se løsningsforslag</button>
                 <div id="example2" style="display: none;">
                     <pre>
-        &lt;ul class=&quot;list-group&quot;&gt;
-            &lt;li class=&quot;list-group-item&quot;&gt;
-                &lt;img class=&quot;produkt&quot; src=&quot;../img/mobil.png&quot;&gt;
-                Mobil
-                &lt;button class=&quot;btn btn-success&quot;&gt;
-                    Legg til
-                &lt;/button&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;</pre>
+                        function cartAdd(item) {
+                            var kurv = document.getElementById('handlekurv');
+                            var element = document.createElement('li');
+                            element.classList.add('list-group-item');
+                            element.appendChild(document.createTextNode(item + " "));
+                            kurv.appendChild(element);
+                        }
+                    </pre>
                 </div>
-
-                <p>Legg også til flere produkter, slik at du totalt har 3 produkter tilgjengelig.</p>
-
             </div>
         </div>
 
 
         <div class="panel panel-primary">
-            <div class="panel panel-heading">4. Legge til produkt i handleliste</div>
+            <div class="panel panel-heading">4. Fjerne HTML i handlekurv</div>
             <div class="panel-body">
                 <p>Vi har nå laget all HTML og CSS for første versjon av webshoppen vår. Nå skal vi videre legge til
                     funksjonalitet for å legge til produkter i en 'handleliste'. For å gjøre dette må vi bruke
@@ -406,7 +405,10 @@ function seeItems() {
                     handlekurv': <code>onclick="seeItems();"</code></p>
                 <p>Hvis du nå har gjort alt korrekt, så kan du forsøke å legge til et produkt i handlekurven også trykke
                     på 'Se handlekurv', så skal du kunne se produktet du valgte komme opp som en varsel.</p>
-                <p><b>Oppgave:</b> Legg til funksjonalitet for knappen 'Tøm handlekurv'.</p>
+                <p><b>Oppgave:</b> Legg til funksjonalitet for knappen 'Tøm handlekurv', slik at den sletter all HTML til elementene i handlekurven.</p>
+
+
+                <p><b>Avansert oppgave: </b>Legg til funksjonalitet for å slette individuelle (én og én) elementer i handlekurven.</p>
             </div>
         </div>
 
