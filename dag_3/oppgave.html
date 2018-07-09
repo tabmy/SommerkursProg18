@@ -227,8 +227,16 @@
                     "Datamaskin" eller "Mobil"</p>
                 <p><b>Tips:</b> Se på funksjonen "function test()" i eksempelet over, og lag en funksjon i ditt script.js-dokument som ligner.</p>
 
-                <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på løsningsforslaget under:</i>
+                <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslaget under:</i>
                 <br>
+                <button class="btn btn-default" onclick="showExample('hint1')">Se hint</button>
+                <div id="hint1" style="display: none;">
+                    <p>
+                        Legg merke til <i>document.getElementById</i> og <i>innerHTML</i>
+                    </p>
+                    <p>Se om du kan få innerHTML i handlekurven til å vise det som ble lagt til.</p>
+                    <p>Du må bruke <i>item</i> som er brukt i <i>addItem</i>-funksjonen i <i>script.js</i>-filen.</p>
+                </div>
                 <button class="btn btn-default" onclick="showExample('example1')">Se løsningsforslag</button>
                 <div id="example1" style="display: none;">
                     <pre>
@@ -290,11 +298,12 @@
                 <p>Dere trenger ikke kunne dette, og vi kommer ikke til å bruke <i>input</i> noe videre i dette kurset.</p>
                 <pre>
                     &lt;script&gt;
-                    var count = 0;
+                    <span style="opacity: 0.3">
+                    var count = 0;</span>
                     function inputTest() {
-                        var text = document.getElementById('inputText').value;
-                        if (count &lt; 3) {
-                            outputTest(text);
+                        var text = document.getElementById('inputText').value;<span style="opacity: 0.3">
+                        if (count &lt; 3) {</span>
+                            outputTest(text);<span style="opacity: 0.3">
                             count++;
                             if (count === 3){
                                 document.getElementById('inputBtn').innerHTML = &quot;Klikk &eacute;n gang til&quot;;
@@ -304,7 +313,7 @@
                             count = 0;
                             document.getElementById('inputBtn').innerHTML = &quot;Trykk p&aring; meg&quot;;
                             document.getElementById('inputUl').innerHTML = &quot;&quot;;
-                        }
+                        }</span>
                     }
                     function outputTest(text) {
                         var ul = document.getElementById('inputUl');
