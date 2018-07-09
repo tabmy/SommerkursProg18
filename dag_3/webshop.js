@@ -3,8 +3,10 @@ var num = 0;
 
 function addItem(item) {
     items.push(item);
-    cartAdd(item)
+    cartAdd(item);
+    //cartShowName(item);
 }
+
 
 function seeItems() {
     console.log("Viser handlekurv");
@@ -30,7 +32,10 @@ function cartAdd(item) {
     el.id = id;
     el.appendChild(document.createTextNode(item + " "));
 
-
+     /*
+     Legger til en button til hvert listeelement
+     som sletter det valgte listeelementet.
+      */
     var fjernBtn = document.createElement('button');
     fjernBtn.appendChild(document.createTextNode('fjern'));
     fjernBtn.onclick = function () {
@@ -49,4 +54,10 @@ function cartAdd(item) {
 
     kurv.appendChild(el);
     console.log('Legger til ' + item)
+}
+
+
+function cartShowName(item){
+    var kurv = document.getElementById('handlekurv');
+    kurv.innerHTML = item;
 }

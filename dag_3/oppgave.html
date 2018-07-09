@@ -119,7 +119,7 @@
 
                 <script>
                     function test() {
-                        var element = document.getElementById('test')
+                        var element = document.getElementById('test');
                         element.innerHTML = 'Du la til denne teksten';
                     }
                 </script>
@@ -135,7 +135,7 @@
                 <pre>
                 &lt;script&gt;
                     function test() {
-                        var element = document.getElementById('test')
+                        var element = document.getElementById('test');
                         element.innerHTML = 'Du la til denne teksten';
 
                     }
@@ -150,14 +150,15 @@
                 </pre>
 
                 <br>
-                <p>Videre kan man legge til betingelser (en if-test) som gjør at man kan endre oppførsel avhengig av
-                    betingelser:</p>
-
+                <p>Videre kan man legge til betingelser (en if/else-test) som gjør at man kan endre oppførsel avhengig av
+                    betingelser.</p>
+                <p>Les gjerne mer om "if/else-test" <a href="https://www.w3schools.com/js/js_if_else.asp">her</a>
+                    <i>(dere trenger ikke lære om if/else ennå, men ta gjerne en titt hvis det virker interessant).</i></p>
                 <script>
                     var count = false;
 
                     function test2() {
-                        var element = document.getElementById('test2')
+                        var element = document.getElementById('test2');
                         element.innerHTML = 'Du la til denne teksten';
                         var btn = document.getElementById('btn');
                         if (count) {
@@ -217,11 +218,17 @@
                 <p>Nå ser vi at man kan bruke JavaScript til å manipulere DOM (HTML) på nettsiden vår.</p>
 
                 <p><b>Oppgave:</b>
-                <p>Legg JavaScript-koden i JavaScript filen din (script.js) og se til at den fungerer på samme måte der.</p>
-                <p>Når du har gjort dette, kan du legge til funksjonalitet for å endre handlekurven basert på elementer lagt til i den.</p>
+                <p>Legg JavaScript-koden i JavaScript filen din (script.js) og se til at den fungerer på samme måte
+                    der.</p>
+                <p>Når du har gjort dette, kan du legge til funksjonalitet for å endre handlekurven basert på elementer
+                    lagt til i den.</p>
 
-                <p>Start med å endre teksten i handlekurven til å vise det siste elementet lagt til. Eksempel "Datamaskin" eller "Mobil"</p>
+                <p>Start med å endre teksten i handlekurven til å vise det siste elementet lagt til. Eksempel
+                    "Datamaskin" eller "Mobil"</p>
+                <p><b>Tips:</b> Se på funksjonen "function test()" i eksempelet over, og lag en funksjon i ditt script.js-dokument som ligner.</p>
 
+                <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på løsningsforslaget under:</i>
+                <br>
                 <button class="btn btn-default" onclick="showExample('example1')">Se løsningsforslag</button>
                 <div id="example1" style="display: none;">
                     <pre>
@@ -232,27 +239,87 @@
 
                         function cartAdd(item){
                             var kurv = document.getElementById('handlekurv');
-                            var el = document.createElement('li');
-                            el.classList.add('list-group-item');
-                            el.appendChild(document.createTextNode(item + " "));
-                            kurv.appendChild(el);
+                            kurv.innerHTML = item;
                         }
-
-                        Må nok endres på - slik at den endrer "inner HTML" til å vise siste "item" lagt til.
-                        resten av eksempelet skal brukes i senere "modul"+oppgave.
-                    </pre>
+                        </pre>
                 </div>
             </div>
         </div>
 
 
         <div class="panel panel-primary">
-            <div class="panel panel-heading">3. Legge til / fjerne HTML i handlekurv</div>
+            <div class="panel panel-heading">3. Legge til HTML i handlekurv</div>
             <div class="panel-body">
-                <p>Nå skal vi vise frem produktene våre på webshopen vår. For å gjøre siden vår penest mulig bestemmer
-                    vi oss for å bruke bilder som kun er av størrelse 640x480. Gå inn på Google og finn noen bilder
-                    av produkter du ønsker å ha med (mobiltelefon/datamaskin/potet etc.). Lagre disse bildene i samme
-                    mappe som resten av filene dine.</p>
+                <p>Nå skal vi vise hvilke produkter som ligger i handlekurven vår. Dette oppnår vi ved bruk av DOM-manipulasjon og å legge til HTML i form av list-items i listen vår.</p>
+
+                <p>Eksempelet under viser hvordan man kan legge til list-items i en liste. Det er i tillegg lagt til funksjonalitet for å velge tekst som skal legges til i listen.</p>
+                <p>Dette vil kun bli brukt som eksempel på hva som er mulig, og det er ikke nødvendig å forstå all JavaScript-koden.</p>
+                <p>Legg spesielt merke til <i>outputTest(text)</i>-funksjonen. Den ligner veldig på den vi kommer til å bruke videre.</p>
+
+                <script>
+                    var count = 0;
+                    function inputTest() {
+                        var text = document.getElementById('inputText').value;
+                        if (count < 3) {
+                            outputTest(text);
+                            count++;
+                            if (count === 3){
+                                document.getElementById('inputBtn').innerHTML = "Klikk én gang til";
+                            }
+                        }
+                        else {
+                            count = 0;
+                            document.getElementById('inputBtn').innerHTML = "Trykk på meg";
+                            document.getElementById('inputUl').innerHTML = "";
+                        }
+                    }
+                    function outputTest(text) {
+                        var ul = document.getElementById('inputUl');
+                        var outputLi = document.createElement('li');
+                        var outputText = document.createTextNode(text);
+                        outputLi.appendChild(outputText);
+                        ul.appendChild(outputLi);
+                    }
+                </script>
+                <button id="inputBtn" onclick="inputTest()">Trykk på meg</button>
+                <input id="inputText" type="text">
+                <ul id="inputUl">
+                </ul>
+
+                <p>Dette oppnår man med koden under.</p>
+                <p>Dere trenger ikke kunne dette, og vi kommer ikke til å bruke <i>input</i> noe videre i dette kurset.</p>
+                <pre>
+                    &lt;script&gt;
+                    var count = 0;
+                    function inputTest() {
+                        var text = document.getElementById('inputText').value;
+                        if (count &lt; 3) {
+                            outputTest(text);
+                            count++;
+                            if (count === 3){
+                                document.getElementById('inputBtn').innerHTML = &quot;Klikk &eacute;n gang til&quot;;
+                            }
+                        }
+                        else {
+                            count = 0;
+                            document.getElementById('inputBtn').innerHTML = &quot;Trykk p&aring; meg&quot;;
+                            document.getElementById('inputUl').innerHTML = &quot;&quot;;
+                        }
+                    }
+                    function outputTest(text) {
+                        var ul = document.getElementById('inputUl');
+                        var outputLi = document.createElement('li');
+                        var outputText = document.createTextNode(text);
+                        outputLi.appendChild(outputText);
+                        ul.appendChild(outputLi);
+                    }
+                    &lt;/script&gt;
+
+                &lt;button id=&quot;inputBtn&quot; onclick=&quot;inputTest()&quot;&gt;Trykk p&aring; meg&lt;/button&gt;
+                &lt;input id=&quot;inputText&quot; type=&quot;text&quot;&gt;
+                &lt;ul id=&quot;inputUl&quot;&gt;
+                &lt;/ul&gt;
+                </pre>
 
                 <p>For å enkelt kunne vise frem produktene med minst mulig HTML-kode skal vi benytte oss av
                     Bootstrap-klasser som bruker for å vise lister på en nettside. Du kan starte med å lage en ul-tag
