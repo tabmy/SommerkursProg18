@@ -17,6 +17,10 @@ h1{
     margin-bottom: 40px;
 }
 
+li {
+    margin-bottom: 8px;
+}
+
 #osloMetlogo{
     height: 5em;
 }
