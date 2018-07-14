@@ -21,7 +21,6 @@ function clearItems() {
     items = [];
     console.log("Tømmer handlekurv");
     document.getElementById('handlekurv').innerHTML = "";
-
 }
 
 function cartAdd(item) {

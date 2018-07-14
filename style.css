@@ -56,3 +56,7 @@ li {
 .header > .headerLink > a:hover{
     background-color: darkgray;
 }
+
+.codeComment{
+    color: red;
+}
