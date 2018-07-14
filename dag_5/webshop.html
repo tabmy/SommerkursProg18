@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OsloMet Progkurs Webshop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="webshop.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="webshop.js"></script>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Hjem</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <button class="btn btn-danger" onclick="clearItems()">Tøm handlekurv</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <button class="btn btn-primary" onclick="seeItems()">Handlekurv</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Webshop</h1>
+
+    <div class="items">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <img class="produkt" src="../img/mobil.png">
+                Mobil
+                <button class="btn btn-success" onclick="addItem('Mobil');">
+                    Legg til
+                </button>
+            </li>
+            <li class="list-group-item">
+                <img class="produkt" src="../img/computer.png">
+                Datamaskin
+                <button class="btn btn-success" onclick="addItem('Datamaskin');">
+                    Legg til
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="items">
+        <p>Handlekurv:</p>
+        <ul class="list-group" id="handlekurv"></ul>
+    </div>
+    <button onclick="getPrice()">Se pris</button>
+    <p id="price"></p>
+</div>
+</body>
+</html>
