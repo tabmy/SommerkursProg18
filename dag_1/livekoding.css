@@ -1,0 +1,57 @@
+body{
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    height: 5em;
+    background-color: seagreen;
+    width: 100%;
+}
+
+.innhold{
+    width: 50%;
+    margin: 1.5em auto auto 15em;
+    background-color: darkseagreen;
+    padding: 0.2em;
+    border-radius: 0.5em;
+}
+
+.innhold > h1, .innhold > p {
+    margin-left: 2.5%;
+}
+
+#headerTittel {
+    font-size: 2em;
+    color:white;
+    font-weight: bold;
+    text-shadow: black 2px 2px;
+    padding-top: 0.5em;
+    padding-left: 1em;
+}
+
+#linkBox{
+    position: fixed;
+    left: 1em;
+    top: 5.5em;
+    background-color: lightgreen;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+#linkBox > ul{
+    list-style-type: none;
+    padding: 0.1em;
+}
+#linkBox > ul, li {
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+#linkBox > p,li,a:link,a:visited{
+    color: darkslategray;
+    font-weight: bold;
+    text-decoration: none;
+}
+#linkBox > li,a:hover{
+    text-decoration: darkslategray underline;
+}
