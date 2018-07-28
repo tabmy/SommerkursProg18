@@ -37,15 +37,9 @@ function cartAdd(item) {
       */
     var fjernBtn = document.createElement('button');
     fjernBtn.appendChild(document.createTextNode('fjern'));
+
     fjernBtn.onclick = function () {
-        this.parentNode.parentNode.removeChild(document.getElementById(id));
-        for (var i = items.length-1; i >=0; i--){
-            if (items[i] === item){
-                items.splice(i,1);
-                break;
-            }
-        }
-        console.log("Fjerner " + item);
+        deleteElement(id, item);
     };
     fjernBtn.classList.add('btn','btn-danger');
     element.appendChild(fjernBtn);
@@ -55,6 +49,17 @@ function cartAdd(item) {
     console.log('Legger til ' + item);
 }
 
+function deleteElement(id, item) {
+    var element = document.getElementById(id);
+    element.parentNode.removeChild(element);
+    for (var i = items.length-1; i >=0; i--){
+        if (items[i] === item){
+            items.splice(i,1);
+            break;
+        }
+    }
+    console.log("Fjerner " + item);
+}
 
 function cartShowName(item){
     var kurv = document.getElementById('handlekurv');

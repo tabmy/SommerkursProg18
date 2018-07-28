@@ -96,7 +96,12 @@
         <script>
             function deleteAll(){
                 document.getElementsByTagName('html')[0].innerHTML="";
-            }</script>
+                document.getElementsByTagName('html')[0].innerHTML="<button style=\"height: 5em; width: 10em; margin-left:45%; margin-top: 20%;\" onClick=\"refresh()\"> Last inn siden </button>";
+            }
+            function refresh() {
+                window.location.reload();
+            }
+        </script>
         <button onclick="deleteAll()">Slett hele siden</button>
         <pre>
             function deleteAll(){

@@ -222,7 +222,9 @@
                 <p>Legg JavaScript-koden i JavaScript filen din (script.js) og se til at den fungerer på samme måte
                     der.</p>
                 <p>Når du har gjort dette, kan du legge til funksjonalitet for å endre handlekurven basert på elementer
-                    lagt til i den.</p>
+                    lagt til i den. Kall funksjonen du lager <i>"cartAdd"</i>, med parameter <i>"item"</i>.
+                    <br>
+                    Slik: <i>function cartAdd(item){...}</i></p>
 
                 <p>Start med å endre teksten i handlekurven til å vise det siste elementet lagt til. Eksempel
                     "Datamaskin" eller "Mobil"</p>
@@ -288,7 +290,7 @@
                     }
                 </script>
                 <button onclick="inputTest()">Trykk på meg</button>
-                <input id="inputText" type="text">
+                <input id="inputText" type="text" placeholder="Skriv noe her">
                 <button onclick="deleteTest()">Slett liste</button>
                 <ul id="inputUl">
                 </ul>
@@ -314,7 +316,7 @@
                     &lt;/script&gt;
 
                 &lt;button onclick=&quot;inputTest()&quot;&gt;Trykk p&aring; meg&lt;/button&gt;
-                &lt;input id=&quot;inputText&quot; type=&quot;text&quot;&gt;
+                &lt;input id=&quot;inputText&quot; type=&quot;text&quot placeholder=&quot;Skriv noe her&quot;&gt;
                 &lt;button onclick=&quot;deleteTest()&quot;&gt;Slett liste&lt;/button&gt;
                 &lt;ul id=&quot;inputUl&quot;&gt;
                 &lt;/ul&gt;
@@ -329,8 +331,10 @@
                     til"</i> på.</p>
                 <p>
                     <b>Tips:</b> se på løsningsforslaget til oppgave 2 og utvid (jobb videre med) koden som står der.
+                    <br>
+                    Det kan også være lurt å lage en <i>TextNode</i> som inneholder navnet på varen du legger i
+                    handlekurven.
                 </p>
-
 
                 <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslaget
                     under:</i>
@@ -360,9 +364,11 @@
         <div class="panel panel-primary">
             <div class="panel panel-heading">4. Fjerne HTML i handlekurv</div>
             <div class="panel-body">
-                <p>Vi klart å legge varene vi velger i handlekurven. Nå skal vi legge til funksjonalitet for å fjerne dem og å tømme handlekurven.</p>
+                <p>Vi klart å legge varene vi velger i handlekurven. Nå skal vi legge til funksjonalitet for å fjerne
+                    dem og å tømme handlekurven.</p>
 
-                <p><b>Oppgave:</b> Legg til funksjonalitet for knappen 'Tøm handlekurv', slik at den sletter all HTML til elementene i handlekurven.</p>
+                <p><b>Oppgave:</b> Legg til funksjonalitet for knappen 'Tøm handlekurv', slik at den sletter all HTML
+                    til elementene i handlekurven.</p>
 
                 <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslaget
                     under:</i>
@@ -370,7 +376,8 @@
 
                 <button class="btn btn-default" onclick="showExample('hint3');">Vis hint</button>
                 <div id="hint3" style="display: none;">
-                    <p>Se på <i>function deleteTest()</i> (i eksempelet på oppgave 3) og prøv å finne ut hvordan du gjør det samme med handlekurven.</p>
+                    <p>Se på <i>function deleteTest()</i> (i eksempelet på oppgave 3) og prøv å finne ut hvordan du gjør
+                        det samme med handlekurven.</p>
                     <p>Husk også å tømme listen/tabellen (array) med varer.</p>
                     <p>I denne oppgaven trenger du kun å endre på <i>script.js</i>-filen.</p>
                 </div>
@@ -387,34 +394,128 @@
 
                 <br>
                 <br>
-                <p>Hvis vi ønsker å beholde varene i handlekurven, men vil slette <b>ett</b> element, så må vi gjøre noen endringer i koden vår.</p>
-                <p><b>KREVENDE UTFORDRING: </b>Legg til funksjonalitet for å slette individuelle (én og én) elementer i handlekurven.</p>
+                <p>Hvis vi ønsker å beholde varene i handlekurven, men vil slette <b>ett</b> element, så må vi gjøre
+                    noen endringer i koden vår.</p>
+                <p><b>UTFORDRING: </b>Legg til funksjonalitet for å slette individuelle (én og én) elementer i
+                    handlekurven.</p>
                 <p>Vi må endre på <i>script.js</i>-filen der vi legger til nye elementer i handlekurven.</p>
                 <p>Der må vi:</p>
                 <ul>
                     <li><p>legge til en unik <i>id</i> til elementet slik at vi sletter riktig element.</p></li>
-                    <li><p>lage en funksjon som sletter ett og ett element fra <i>items</i>-tabellen</p></li>
                     <li><p>lage en knapp for hvert element vi legger til i handlekurven</p></li>
                     <li><p>gjøre at knappen fjerner elementet den hører til</p></li>
                 </ul>
-                <p><b>Obs:</b> Denne oppgaven krever forståelse for HTML og JavaScript, og programmering generelt.</p>
-                <p>Vi anbefaler likevel å prøve, så skal vi veilede så godt vi kan.</p>
+                <p>Vi anbefaler å prøve seg på disse oppgavene, så skal vi veilede så godt vi kan.</p>
 
-                <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslaget
-                    under:</i>
-                <br>
-                <button class="btn btn-default" onclick="showExample('hint4');">Vis hint</button>
-                <div id="hint4" style="display: none;">
-                    <p>Bruk <i>this.parentNode.parentNode.removeChild(document.getElementById(id));</i> til å fjerne ett og ett listeelement med fjern-knappen du legger til. </p>
-                    <p>Bruk en <i>for</i>-løkke til å iterere gjennom <i>items</i>-tabellen og fjern et element med navn som matcher med <i>items.splice(i,1).</i></p>
-                    <p>Bruk en <i>if</i>-test for å sjekke om <i>element</i> i <i>items</i> stemmer med det <i>element</i>et du vil slette.</p>
+                <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslagene
+                    under oppgavene</i>
+                <br><br>
+                <p><b>Deloppgave 1</b>:Legg til en unik <i>id</i> til hvert element som legges til i handlekurven.</p>
+                <button class="btn btn-default" onclick="showExample('hintd1')">Vis hint</button>
+                <button class="btn btn-default" onclick="showExample('lf1')">Vis løsningsforslag</button>
+                <div id="hintd1" style="display: none">
+                    <p>Se på hvordan eksemplene i oppgave 2 og 3 gir id til html-elementer.</p>
                 </div>
+                <div id="lf1" style="display: none;">
+                    <pre>
+                        var items = [];
+                        var num = 0;<span class="codeComment">//Legger til en teller som brukes i element-ID</span>
+
+                        function cartAdd(item){
+                            var kurv = document.getElementById('handlekurv');
+                            var element = document.createElement('li');
+                            element.classList.add('list-group-item');
+
+                            var id = "element" + num++; <span class="codeComment">//Lager unik id lik verdien til "element", så øker den. Da vil alle verdier ha en unik tallverdi</span>
+                            element.id = id; <span class="codeComment">//Gir elementet id-en som vi lager over.</span>
+                            element.appendChild(document.createTextNode(item + " ")); <span class="codeComment">//Lager en tekstnode hvor det står hvilken vare denne linjen tilhører.</span>
+
+                            kurv.appendChild(element);
+                        }</pre>
+                </div>
+                <br>
+                <br>
+                <p><b>Deloppgave 2:</b> Lag en knapp for hvert element som legges til i handlekurven</p>
+                <button class="btn btn-default" onclick="showExample('hintd2')">Vis hint</button>
+                <button class="btn btn-default" onclick="showExample('lf2')">Vis løsningsforslag</button>
+                <div id="hintd2" style="display: none">
+                    <p>Lag en knapp med document.createElement('button').
+                        Bruk "appendChild" til å legge den til "li"-elementet du lager når du legger til en vare i
+                        handlekurven</p>
+                </div>
+                <div id="lf2" style="display: none;">
+                    <pre>
+                        var items = [];
+                        var num = 0;
+
+                        function cartAdd(item){
+                            var kurv = document.getElementById('handlekurv');
+                            var element = document.createElement('li');
+                            element.classList.add('list-group-item');
+
+                            var id = "element" + num++;
+                            element.id = id;
+                            element.appendChild(document.createTextNode(item + " "));
+
+                            var fjernBtn = document.createElement('button');<span
+                            class="codeComment">//Lager en knapp</span>
+                            fjernBtn.appendChild(document.createTextNode('fjern'));<span class="codeComment">//Legger til teksten "fjern" på knappen</span>
+                            fjernBtn.classList.add('btn','btn-danger');<span class="codeComment">//Legger til <i>class=&quot;btn btn-danger&quot;</i> på knappen</span>
+                            element.appendChild(fjernBtn);<span class="codeComment">//Legger til fjern-knappen i "li"-elementet i handlekurven</span>
+
+                            kurv.appendChild(element);
+                        }</pre>
+                </div>
+                <br><br>
+                <p><b>Deloppgave 3:</b> Gjør at knappen kaller på funksjonen deleteElement(id, item) når du trykker på
+                    den.</p>
+                <p>Kopier denne koden og lim inn i <i>script.js</i>-filen:</p>
+                <pre>
+                   function deleteElement(id, item) {
+                        var element = document.getElementById(id);
+                        element.parentNode.removeChild(element);
+                        for (var i = items.length-1; i >=0; i--){
+                            if (items[i] === item){
+                                items.splice(i,1);
+                                break;
+                            }
+                        }
+                        console.log("Fjerner " + item);
+                    }</pre>
+
+                <button class="btn btn-default" onclick="showExample('hintd3');">Vis hint</button>
+                <btn class="btn btn-default" onclick="showExample('lf3')">Vis løsningsforslag</btn>
+                <div id="hintd3" style="display: none;">
+                    <p>Sett fjernBtn sin onclick til å kalle på deleteElement(id, item)</p>
+                    <p>I JS brukes onclick=function(){ <i>kode</i> };</p>
+                </div>
+                <div id="lf3" style="display: none">
+                    <pre>
+                            <span class="codeComment">/*
+                            Legger til en button til hvert listeelement
+                            som sletter det valgte listeelementet.
+                            */</span>
+                            var fjernBtn = document.createElement('button');
+                            fjernBtn.appendChild(document.createTextNode('fjern'));
+
+                            <span class="codeComment">//Kaller på funksjonen "deleteElement", som er gitt i oppgaven</span>
+                            fjernBtn.onclick = function () {
+                                deleteElement(id, item);
+                            };
+                            fjernBtn.classList.add('btn','btn-danger');
+                            element.appendChild(fjernBtn);
+                    </pre>
+                </div>
+
+                <br><br>
+                <p><b>Løsningsforslag til hele oppgaven:</b></p>
 
                 <button class="btn btn-default" onclick="showExample('example4');">Vis løsningsforslag</button>
                 <div id="example4" style="display: none;">
                     <pre>
                         var items = [];
-                        var num = 0; <span class="codeComment">//Legger til en teller for å holde orden på unike id-er.</span>
+                        var num = 0; <span
+                            class="codeComment">//Legger til en teller for å holde orden på unike id-er.</span>
 
                         function cartAdd(item) {
                             var kurv = document.getElementById('handlekurv');
@@ -425,32 +526,23 @@
                             element.id = id; <span class="codeComment">//Gir elementet id-en som vi lager over.</span>
                             element.appendChild(document.createTextNode(item + " "));
 
-                             <span class="codeComment">/*
-                             Legger til en button til hvert listeelement
-                             som sletter det valgte listeelementet.
-                              */</span>
+                            <span class="codeComment">/*
+                            Legger til en button til hvert listeelement
+                            som sletter det valgte listeelementet.
+                            */</span>
                             var fjernBtn = document.createElement('button');
                             fjernBtn.appendChild(document.createTextNode('fjern'));
-                                <span class="codeComment">     /*
-                                    Lager en funksjon som sletter riktig element fra array "items".
-                                    Setter "fjern-knappen" sin onClick til funksjonen vi lager.
-                                    */
-                                </span>fjernBtn.onclick = function () {
-                                    this.parentNode.parentNode.removeChild(document.getElementById(id));
-                                    for (var i = items.length-1; i >=0; i--){
-                                        if (items[i] === item){
-                                            items.splice(i,1);
-                                            break;
-                                        }
-                                    }
-                                    console.log("Fjerner " + item);
-                                };
+
+                            <span class="codeComment">//Kaller på funksjonen "deleteElement", som er gitt i oppgaven</span>
+                            fjernBtn.onclick = function () {
+                                deleteElement(id, item);
+                            };
                             fjernBtn.classList.add('btn','btn-danger');
                             element.appendChild(fjernBtn);
 
                             kurv.appendChild(element);
                             console.log('Legger til ' + item);
-                        }</pre>
+                    }</pre>
                 </div>
                 <br>
                 <br>
