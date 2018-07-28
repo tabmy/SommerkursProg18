@@ -81,8 +81,7 @@
                             &lt;title&gt;OsloMet Progkurs Webshop&lt;/title&gt;
                         &lt;/head&gt;
                         &lt;body&gt;
-                            &lt;div class=&quot;container&quot;&gt;
-                            &lt;/div&gt;
+
                         &lt;/body&gt;
                     &lt;/html&gt;
                 </pre>
@@ -114,6 +113,15 @@
     &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot; integrity=&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
                 </pre>
 
+                <p>Nå har vi lagt til bootstrap som css-bibliotek. Dette vil si at vi nå har tilgang til forhåndsdefinerte CSS-klasser (class-attributt) som vi kan bruke for å style vår HTML.
+                Vi legger til en 'div'-tagg i vår body tag med class="container":</p>
+
+                <pre>
+    &lt;div class=&quot;container&quot;&gt;
+    &lt;/div&gt;
+                </pre>
+
+                <p>Denne gjør slik at alt innholdet blir sentrert på nettsiden vår.</p>
 
 
                 <p>Videre skal vi bruke noen bootstrap klasser for navbaren vår. Her starter vi med å legge følgende kode:</p>
@@ -132,7 +140,7 @@
 
                 <p>Nå kan vi se at vi har fått en meny øverst på hjemmesiden vår. Prøv å endre på teksten i HTML slik at det står noe annet enn 'Hjem' helt til venstre i menyen din.</p>
                 <p><b>Oppgave: </b>Når du har gjort dette, kan du legge til to knapper (button), hvor det skal stå <b>'Tøm handlekurv'</b> på den ene, og <b>'Se handlekurv'</b> på den andre.
-                    Disse kan du også style, enten ved å bruke <a href="https://getbootstrap.com/docs/3.3/css/#buttons">Bootstrap buttons</a>, eller med ren CSS om du ønsker en utfordring.</p>
+                    Disse kan du også style, enten ved å bruke <a href="https://getbootstrap.com/docs/3.3/css/#buttons">Bootstrap buttons</a>, eller med ren CSS om du ønsker det. Disse skal du legge til i din navbar.</p>
 
                 <p>Hvis du ønsker å designe din egen navbar, kan du bruke <a href="https://getbootstrap.com/docs/3.3/components/#navbar">følgende link</a> for eksempler på hvordan du gjør det med Bootstrap,
                     eller så kan du forsøke å gjøre det med ren HTML/CSS. Viktig at du fortsatt har med knappene vi lagde nylig.</p>
@@ -151,7 +159,7 @@
                 <p>For å enkelt kunne vise frem produktene med minst mulig HTML-kode skal vi benytte oss av Bootstrap-klasser som bruker for å vise lister på en nettside. Du kan starte med å lage en ul-tag
                 inne i div-taggen med container-klassen. 'ul' står for 'Unordered list'. Denne nye ul-taggen skal ha følgende attributt: <code>class="list-group"</code>.</p>
 
-                <p>Inne i din nye ul-tag, kan du lage en ny li-tag. 'li' er et element i en liste. Denne skal ha <code>list-group-item</code> som class. En li med <code>list-group-item</code> vil da representere <b>et</b> produkt.</p>
+                <p>Inne i din nye ul-tag, kan du lage en ny li-tag. En 'li'-tag er et element i en liste. Denne skal ha <code>list-group-item</code> som class. En li med <code>list-group-item</code> vil da representere <b>et</b> produkt.</p>
 
                 <p><b>Oppgave:</b>Når du er ferdig med dette skal du legge til bilde og tekst av produktet, og en knapp med teksten 'Legg i handlekurv' på. <i>Om du sitter fast kan du trykke på knappen under og se et løsningsforslag.</i></p>
 
@@ -181,10 +189,10 @@
             <div class="panel-body">
                 <p>Vi har nå laget all HTML og CSS for første versjon av webshoppen vår. Nå skal vi videre legge til funksjonalitet for å legge til produkter i en 'handleliste'. For å gjøre dette må vi bruke Javascript.</p>
                 <p>Det første vi kan gjøre er å skrive følgende inn i Javascript filen vår (script.js): <code>var items = [];</code></p>
-                <p>Her har vi laget en <i>variabel</i> som vi har kalt for 'items'. Denne har fått verdien '[ ]', som er en liste/tabell. I denne listen kan vi legge til forskjellige type verdier.
+                <p>Her har vi laget en <i>variabel</i> som vi har kalt for 'items'. Denne har fått verdien '[ ]', som er en <b>tom</b> liste/tabell. I denne listen kan vi legge til forskjellige type verdier.
                     I vårt tilfelle skal vi legge inn hvilke produkter kunden har valgt.</p>
                 <p>Vårt neste steg er å faktisk legge produkter inn i lista vi har deklarert (opprettet). Her må vi opprette en funksjon.
-                    <u>En funksjon inneholder en eller flere kodelinjer som kan kjøres på et bestemt tidspunkt.</u> Følgende skrives i scripts.js:
+                    <u>En funksjon inneholder en eller flere kodelinjer som kan kjøres på et bestemt tidspunkt/ved en spesifikk hendelse.</u> Følgende skrives i scripts.js:
                 </p>
                 <pre>
 function addItem(item) {

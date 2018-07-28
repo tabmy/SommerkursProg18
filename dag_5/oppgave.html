@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Oppgave dag 5</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
     <script src="../script.js"></script>
 </head>
 <body>
@@ -34,20 +37,24 @@
         <a href="../dag_5/oppgave.html">Dag 5</a>
     </div>
 </div>
-    <div class="container">
-        <h1>Oppgaver dag 5</h1>
+<div class="container">
+    <h1>Oppgaver dag 5</h1>
 
-        <p>I dag skal vi fullføre webapplikasjonen vår. Vi har hittil laget en frontend av webapplikasjonen, og i tillegg har vi også sett hvordan vi kan sette opp en backend, og hva et API er. Målet for denne
-        dagen er å kunne koble disse to sammen. Vi skal da lage en ny Python fil, som inneholder funksjonalitet den skal gjøre for applikasjonen vår. Dette vil innebære å f.eks. regne ut prisen
-            for varene i handlekurven.</p>
+    <p>I dag skal vi fullføre webapplikasjonen vår. Vi har hittil laget en frontend av webapplikasjonen, og i tillegg
+        har vi også sett hvordan vi kan sette opp en backend, og hva et API er. Målet for denne
+        dagen er å kunne koble disse to sammen. Vi skal da lage en ny Python fil, som inneholder funksjonalitet den skal
+        gjøre for applikasjonen vår. Dette vil innebære å f.eks. regne ut prisen
+        for varene i handlekurven.</p>
 
 
-        <div class="panel panel-primary">
-            <div class="panel panel-heading">1. Oppsett av Python filen</div>
-            <div class="panel-body">
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">1. Oppsett av Python filen</div>
+        <div class="panel-body">
 
-        <p>Det første du kan gjøre er å lage et nytt Python-prosjekt i PyCharm(eller bare lag en ny fil i eksisterende prosjekt), lage en ny Python fil, og skrive inn følgende kode for at Python-programmet skal kjøre:</p>
-        <pre>
+            <p>Det første du kan gjøre er å lage et nytt Python-prosjekt i PyCharm(eller bare lag en ny fil i
+                eksisterende prosjekt), lage en ny Python fil, og skrive inn følgende kode for at Python-programmet skal
+                kjøre:</p>
+            <pre>
 from flask import Flask
 app = Flask(__name__)
 
@@ -63,20 +70,21 @@ def after_request(response):
 app.run()
         </pre>
 
-                <p>Ikke tenk over den siste funksjonen 'after-request'. Det konfigurasjon vi må gjøre for å la frontend snakke med backend.</p>
-                <p>Kjør filen og forsøk å gå inn på linken slik at du kaller på funksjonen over.</p>
+            <p>Ikke tenk over den siste funksjonen 'after-request'. Det er konfigurasjon vi må gjøre for å la frontend
+                snakke med backend.</p>
+            <p>Kjør filen og forsøk å gå inn på linken slik at du kaller på funksjonen over.</p>
 
-                <p><b>Oppgaver:</b></p>
-                <ol>
-                    <li>Lag et API som tar i mot et antall varer, og returnerer samlet pris på disse. (Vi setter samme
-                        pris på alle varer per nå). For eksempel vil du kalle på <code>http://localhost:5000/hentPris?antallVarer=7</code>
-                        , serveren vil utføre et mattestykke, f.eks. <code>antallPris * 50</code> og returnere tallet
-                        350. Prøv selv! Løsningforslag finnes her om du skulle trenge det:
-                        <button class="btn btn-sm btn-default" onclick="showExample('hentPrisEx')">Løsningsforslag</button>
-                    </li>
-                </ol>
+            <p><b>Oppgaver:</b></p>
+            <ol>
+                <li>Lag et API som tar i mot et antall varer, og returnerer samlet pris på disse. (Vi setter samme
+                    pris på alle varer per nå). For eksempel vil du kalle på <code>http://localhost:5000/hentPris?antallVarer=7</code>
+                    , serveren vil utføre et mattestykke, f.eks. <code>antallPris * 50</code> og returnere tallet
+                    350. Prøv selv! Løsningforslag finnes her om du skulle trenge det:
+                    <button class="btn btn-sm btn-default" onclick="showExample('hentPrisEx')">Løsningsforslag</button>
+                </li>
+            </ol>
 
-                <pre id="hentPrisEx" style="display: none">
+            <pre id="hentPrisEx" style="display: none">
 @app.route('/hentPris', methods=['GET'])
 def calculate():
     items = request.args['items']
@@ -88,18 +96,20 @@ def calculate():
 
                 </pre>
 
-            </div>
         </div>
+    </div>
 
-        <div class="panel panel-primary">
-            <div class="panel panel-heading">2. Sammenkobling av Frontend og Backend</div>
-            <div class="panel-body">
-                <p>Det vi skal gjøre nå er å faktis koble sammen frontend og backend. Vi skal først gjøre et eksempel hvor vi kaller på API'et som returnerer 'Hello World' for å kunne hente informasjon fra server
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">2. Sammenkobling av Frontend og Backend</div>
+        <div class="panel-body">
+            <p>Det vi skal gjøre nå er å faktis koble sammen frontend og backend. Vi skal først gjøre et eksempel hvor
+                vi kaller på API'et som returnerer 'Hello World' for å kunne hente informasjon fra server
                 og deretter legge det inn i HTML'en vår, altså DOM-manipulasjon som vi har gjort en del tidligere.</p>
 
-                <p>For å kunne gjøre dette må vi vite hvordan vi kaller på et API gjennom Javascript. Gå til Javascript filen dere og lag følgende funksjon:</p>
+            <p>For å kunne gjøre dette må vi vite hvordan vi kaller på et API gjennom Javascript. Gå til Javascript
+                filen dere og lag følgende funksjon:</p>
 
-                <pre>
+            <pre>
 function calculatePrice(){
     $.ajax({
         url: 'http://127.0.0.1:5000/',
@@ -111,15 +121,23 @@ function calculatePrice(){
 
                 </pre>
 
-                <p>Det denne koden gjør er å gjøre et kall på URL'en <code>http://127.0.0.1:5000/</code>, som vi spesifiserte i Python kode over og sa at den skal returnere 'Hello World'. Vi <s></s>er også at dette kallet er en type 'GET'.
-                Det siste som spesifiseres i denne koden er 'success', som spesifiseres som en funksjon. Dette kan være litt forvirrende, men vi ser at i denne funksjonen har vi en variabel som heter 'result', som vil inneholde verdien 'Hello World'
+            <p>Det denne koden gjør er å gjøre et kall på URL'en <code>http://127.0.0.1:5000/</code>, som vi
+                spesifiserte i Python kode over og sa at den skal returnere 'Hello World'. Vi <s></s>er også at dette
+                kallet er en type 'GET'.
+                Det siste som spesifiseres i denne koden er 'success', som spesifiseres som en funksjon. Dette kan være
+                litt forvirrende, men vi ser at i denne funksjonen har vi en variabel som heter 'result', som vil
+                inneholde verdien 'Hello World'
                 etter vi har kalt på URL'en over.</p>
 
-                <p><b>Oppgave:</b></p>
+            <p><b>Oppgave:</b></p>
 
-                <ol>
-                    <li>Lag en knapp og si at den skal kalle på funksjonen over ( testAPI() ) når du trykker på den. (Hint: bruk attributten 'onclick')</li>
-                    <li>Modifiser nå koden over slik at du kaller på funksjonen du lagde i <u>oppgave 1</u> i forrige kapittel. <button class="btn btn-default" onclick="showExample('apiCallEx')">Løsningsforslag</button>
+            <ol>
+                <li>Lag en knapp og si at den skal kalle på funksjonen over ( testAPI() ) når du trykker på den. (Hint:
+                    bruk attributten 'onclick')
+                </li>
+                <li>Modifiser nå koden over slik at du kaller på funksjonen du lagde i <u>oppgave 1</u> i forrige
+                    kapittel.
+                    <button class="btn btn-default" onclick="showExample('apiCallEx')">Løsningsforslag</button>
                     <pre id="apiCallEx" style="display: none">
 function calculatePrice(){
     $.ajax({
@@ -129,72 +147,88 @@ function calculatePrice(){
             alert(result);
         }
     })
-                    </pre></li>
-                </ol>
-            </div>
+                    </pre>
+                </li>
+            </ol>
         </div>
+    </div>
 
 
-        <div class="panel panel-primary">
-            <div class="panel panel-heading">3. Oppdatere pris automatisk</div>
-            <div class="panel-body">
-                <p>Vi går nå ut fra at du har implementert det som er beskrevet i oppgavene over, slik at du kan kalle på funksjonen 'calculatePrice' og får opp en alert hvor prisen på varer * pris skal komme opp-</p>
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">3. Oppdatere pris automatisk</div>
+        <div class="panel-body">
+            <p>Vi går nå ut fra at du har implementert det som er beskrevet i oppgavene over, slik at du kan kalle på
+                funksjonen 'calculatePrice' og får opp en alert hvor prisen på varer * pris skal komme opp-</p>
 
-                <p>Dette delkapittelet er i seg selv en oppgave hvor du skal ta i bruk det du har lært de siste dagene.</p>
+            <p>Dette delkapittelet er i seg selv en oppgave hvor du skal ta i bruk det du har lært de siste dagene.</p>
 
-                <p><b>Oppgave:</b></p>
+            <p><b>Oppgave:</b></p>
 
-                <p><u>Legg til nødvendig kode slik at prisen oppdaterer seg automatisk hver gang du legger til et nytt produkt i handlekurven.</u> Om du sitter fast snakk med medstudenter eller forelesere dine for å få hjelp til å løse denne.
-                Om du ikke får det til, så vil løsningsforslaget være tilgjengelig ved å trykke på knappen under etter kl 13 i dag.</p>
+            <p><u>Legg til nødvendig kode slik at prisen oppdaterer seg automatisk hver gang du legger til et nytt
+                produkt i handlekurven.</u> Om du sitter fast snakk med medstudenter eller forelesere dine for å få
+                hjelp til å løse denne.
+                Om du ikke får det til, så vil løsningsforslaget være tilgjengelig ved å trykke på knappen under etter
+                kl 13 i dag.</p>
 
-                <button class="btn btn-default" onclick="showExample('sisteLosningsforslag')">Løsningsforslag</button>
+            <button class="btn btn-default" onclick="showExample('sisteLosningsforslag')">Løsningsforslag</button>
 
-                <div id="sisteLosningsforslag" style="display: none">
+            <div id="sisteLosningsforslag" style="display: none">
                     <pre>
 TODO:
                     </pre>
-                </div>
-
-
-                <p>Ferdig med oppgaven? Gå gjennom alle tidligere oppgavesett og pass på at du har fått med deg alt! Deretter kan du sammenligne webapplikasjonen du har laget med medstudenter,
-                    og til slutt med forelesere (om de er tilgjengelig) for å se om de har noen tips til videreutvikler eller om du har noen spørsmål til hvordan ting fungerer.
-                    Videre så kan du velge mellom noen oppgaver mens du venter på pizza senere:</p>
-
-                <ul>
-                    <li>Registrer deg på <a href="https://codecademy.com/">Codecademy</a> og gjør kurset 'Make a website'</li>
-                    <li>Registrer deg på <a href="https://codecademy.com/">Codecademy</a> og gjør kurset 'Introduction to Javascript'</li>
-                    <li><b>Utfordring!</b> API'et vi bruker nå tar bare i mot antall varer og regner deretter ut prisen med <code>antallVarer * prisPerVare</code>, noe som ikke er særlig realistisk.
-                    Gjør om på koden (både frontend og backend) slik at du f.eks. kan kalle på <code>http://localhost:5000/calculate?poteter=7&datamaskiner=3&pcer=0</code>,
-                        hvor backenden regner ut prisen med individuelle priser for hver produkt og returnerer summen.</li>
-                </ul>
-
-                <p><b>Til slutt:</b> Vi håper at du har følt at du har lært noe gjennom disse dagene. Om du synes alt vi har lært hittil virker veldig skremmende og overveldende så kan du ta det helt med ro! Det vi har gjennomgått
-                her, er temaer som vil bli introdusert gjennom alle tre årene du skal gå på OsloMet! Med andre ord har du veldig lang tid på å gå mer i dybde på temaer vi har gått gjennom her.</p>
-
-                <p>Målet med kurset har vært at studentene skal sitte igjen med kunnskap om hvordan en webapplikasjon fungerer, forskjellige typer programmeringsspråk og samhandlingen mellom disse........ :D
-                </p>
             </div>
-        </div>
 
+
+            <p>Ferdig med oppgaven? Gå gjennom alle tidligere oppgavesett og pass på at du har fått med deg alt!
+                Deretter kan du sammenligne webapplikasjonen du har laget med medstudenter,
+                og til slutt med forelesere (om de er tilgjengelig) for å se om de har noen tips til videreutvikler
+                eller om du har noen spørsmål til hvordan ting fungerer.
+                Videre så kan du velge mellom noen oppgaver mens du venter på pizza senere:</p>
+
+            <ul>
+                <li>Registrer deg på <a href="https://codecademy.com/">Codecademy</a> og gjør kurset 'Make a website'
+                </li>
+                <li>Registrer deg på <a href="https://codecademy.com/">Codecademy</a> og gjør kurset 'Introduction to
+                    Javascript'
+                </li>
+                <li><b>Utfordring!</b> API'et vi bruker nå tar bare i mot antall varer og regner deretter ut prisen med
+                    <code>antallVarer * prisPerVare</code>, noe som ikke er særlig realistisk.
+                    Gjør om på koden (både frontend og backend) slik at du f.eks. kan kalle på <code>http://localhost:5000/calculate?poteter=7&datamaskiner=3&pcer=0</code>,
+                    hvor backenden regner ut prisen med individuelle priser for hver produkt og returnerer summen.
+                </li>
+            </ul>
+
+            <p><b>Til slutt:</b> Vi håper at du har følt at du har lært noe gjennom disse dagene. Om du synes alt vi har
+                lært hittil virker veldig skremmende og overveldende så kan du ta det helt med ro! Det vi har
+                gjennomgått
+                her, er temaer som vil bli introdusert gjennom alle tre årene du skal gå på OsloMet! Med andre ord har
+                du veldig lang tid på å gå mer i dybde på temaer vi har gått gjennom her.</p>
+
+            <p>Målet med kurset har vært at studentene skal sitte igjen med kunnskap om hvordan en webapplikasjon
+                fungerer, forskjellige typer programmeringsspråk og samhandlingen mellom disse........ :D
+            </p>
+        </div>
     </div>
+
+</div>
 </body>
 <script>
-function checkDate() {
-    var date = new Date();
+    function checkDate() {
+        var date = new Date();
 
-    console.log(date.getFullYear());
-    console.log(date.getMonth());
-    console.log(date.getDate());
-    console.log(date.getHours());
+        console.log(date.getFullYear());
+        console.log(date.getMonth());
+        console.log(date.getDate());
+        console.log(date.getHours());
 
-    if (!(date.getFullYear() > 2018 || date.getMonth() > 6 && date.getDate() > 2 && date.getHours() > 12)){
-        if (document.location.href.indexOf('dag_5') > -1) {
-            document.getElementById('sisteLosningsforslag').remove();
+        if (!(date.getFullYear() > 2018 || date.getMonth() > 6 && date.getDate() > 2 && date.getHours() > 12)) {
+            if (document.location.href.indexOf('dag_5') > -1) {
+                document.getElementById('sisteLosningsforslag').remove();
+            }
         }
+
     }
 
-}
-
-checkDate();
+    checkDate();
 </script>
 </html>
