@@ -201,8 +201,7 @@
                             count = true;
                             btn.innerText = &quot;Trykk p&aring; meg igjen&quot;
                         }
-                    }
-                </pre>
+                    }</pre>
 
                 <p>I tillegg må du gi knappen en ID:</p>
 
@@ -213,8 +212,7 @@
                         &lt;/button&gt;
                     &lt;/ul&gt;
                     &lt;p id=&quot;test&quot;&gt;
-                    &lt;/p&gt;
-                </pre>
+                    &lt;/p&gt;</pre>
 
                 <p>Nå ser vi at man kan bruke JavaScript til å manipulere DOM (HTML) på nettsiden vår.</p>
 
@@ -391,9 +389,11 @@
                             document.getElementById('handlekurv').innerHTML = "";
                         }</pre>
                 </div>
-
-                <br>
-                <br>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">5. Fjerne HTML i handlekurv - UTFORDRING</div>
+            <div class="panel-body">
                 <p>Hvis vi ønsker å beholde varene i handlekurven, men vil slette <b>ett</b> element, så må vi gjøre
                     noen endringer i koden vår.</p>
                 <p><b>UTFORDRING: </b>Legg til funksjonalitet for å slette individuelle (én og én) elementer i
@@ -409,12 +409,17 @@
 
                 <i>Om du sitter fast, spør en av foreleserne. Du kan også ta en titt på hintet eller løsningsforslagene
                     under oppgavene</i>
-                <br><br>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">5. Deloppgave 1</div>
+            <div class="panel-body">
                 <p><b>Deloppgave 1</b>:Legg til en unik <i>id</i> til hvert element som legges til i handlekurven.</p>
                 <button class="btn btn-default" onclick="showExample('hintd1')">Vis hint</button>
                 <button class="btn btn-default" onclick="showExample('lf1')">Vis løsningsforslag</button>
                 <div id="hintd1" style="display: none">
                     <p>Se på hvordan eksemplene i oppgave 2 og 3 gir id til html-elementer.</p>
+                    <p>I JavaScript gis id med <i>navn-på-element</i>.id="<i>identifikator</i>"</p>
                 </div>
                 <div id="lf1" style="display: none;">
                     <pre>
@@ -433,8 +438,11 @@
                             kurv.appendChild(element);
                         }</pre>
                 </div>
-                <br>
-                <br>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">5. Deloppgave 2</div>
+            <div class="panel-body">
                 <p><b>Deloppgave 2:</b> Lag en knapp for hvert element som legges til i handlekurven</p>
                 <button class="btn btn-default" onclick="showExample('hintd2')">Vis hint</button>
                 <button class="btn btn-default" onclick="showExample('lf2')">Vis løsningsforslag</button>
@@ -466,7 +474,11 @@
                             kurv.appendChild(element);
                         }</pre>
                 </div>
-                <br><br>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">5. Deloppgave 3</div>
+            <div class="panel-body">
                 <p><b>Deloppgave 3:</b> Gjør at knappen kaller på funksjonen deleteElement(id, item) når du trykker på
                     den.</p>
                 <p>Kopier denne koden og lim inn i <i>script.js</i>-filen:</p>
@@ -544,9 +556,6 @@
                             console.log('Legger til ' + item);
                     }</pre>
                 </div>
-                <br>
-                <br>
-                <p>Det er helt greit om du hopper over denne utfordringen.</p>
             </div>
         </div>
 
