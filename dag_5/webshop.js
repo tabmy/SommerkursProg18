@@ -4,7 +4,9 @@ var num = 0;
 function addItem(item) {
     items.push(item);
     cartAdd(item);
+    getPrice();
     //cartShowName(item);
+
 }
 
 

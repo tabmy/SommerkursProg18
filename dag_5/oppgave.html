@@ -172,10 +172,30 @@ function calculatePrice(){
 
             <button class="btn btn-default" onclick="showExample('sisteLosningsforslag')">Løsningsforslag</button>
 
-            <div id="sisteLosningsforslag" style="display: none">
+            <div id="sisteLosningsforslag" style="display: none; background-color: lightgoldenrodyellow;">
+                <p>Først må vi legge til en tom p-tag, med en id i vår HTML.</p>
+                <p>Deretter lager vi en funksjon som endrer teksten i denne taggen. Deretter kaller vi på denne funksjonen i API-kallet vårt:</p>
                     <pre>
-TODO:
+function calculatePrice() {
+    var numberOfItems = items.length;
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/calculate?antallVarer=' + numberOfItems,
+        type: 'GET',
+        success: function(result) {
+            showPrice(result);
+        }
+
+    });
+}
+
+function showPrice(price) {
+    document.getElementById('price').innerText = 'Totalpris = ' + price + ",- kr";
+}
                     </pre>
+
+                <p><b>Til slutt må vi kalle på funksjonen 'getPrice()' til slutt i 'addItem()' funksjonen vår.</b></p>
+
             </div>
 
 
@@ -214,6 +234,7 @@ TODO:
 </body>
 <script>
     function checkDate() {
+        return;
         var date = new Date();
 
         console.log(date.getFullYear());
