@@ -226,52 +226,57 @@ function seeItems() {
 
         <div class="panel panel-primary">
             <div class="panel panel-heading">
-                5. JSON - JavaScript Object Notation
+                5. Betaling av varer
             </div>
             <div class="panel-body">
-                <p>Nå skal vi se litt på JSON</p>
+                <p><u>Om du ikke er ferdig med denne oppgaven på tirsdag, kan du fortsette med den senere i uken.</u></p>
+                <p>Nå skal vi implementere en liten 'betalingsløsning', slik at en person som bruker siden kan betale for varene de har bestilt.
+                Vi skal kun implementere det visuelle, altså HTML'en av denne. Vi kommer til å gi den mer funksjonalitet.</p>
 
-                <button class="btn btn-default" onclick="showExample('hint5');">Vis hint</button>
-                <div id="hint5" style="display: none;">
-                    <p>Dette er hint 4</p>
-                </div>
+                <p>Vi skal lage en <a href="https://getbootstrap.com/docs/3.3/javascript/#modals">modal</a> som i hovedsak skal inneholde to ting.</p>
 
-                <button class="btn btn-default" onclick="showExample('example5');">Vis løsningsforslag</button>
-                <div id="example5" style="display: none;">
-                    <pre>
-                        Dette er løsningsforslag
-                    </pre>
-                </div>
+                <ul>
+                    <li>
+                        En input for kontonummer
+                    </li>
+                    <li>
+                        En input for navn på personen som skal betale
+                    </li>
+                </ul>
 
+                <p>Du kan trykke på følgende knapp for å se hva en modal er:</p>
 
+                <script>alert('Hei på deg!')</script>
                 <div class="modal fade" id="betalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Betal</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Example-modal</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                TEKST SKAL HER
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Betal</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button onclick="openModal();">MODAL OPEN</button>
+                <button class="btn btn-primary" onclick="openModal();">Hva er en modal?</button>
                 <script>
                     function openModal() {
                         $('#betalModal').modal('show')
                     }
+                    function betal(){
+                        var name = document.getElementById('name').value;
+                        var accnr = document.getElementById('kontonr').value;
+                        alert('Navn:' + name + '\nKonto: ' + accnr);
+                    }
                 </script>
 
-                <p>KODE FOR MODAL:</p>
-
+                <p>Kopier følgende kode inn i webshop.html:</p>
 
                 <pre>
                 &lt;div class=&quot;modal fade&quot; id=&quot;betalModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
@@ -287,7 +292,7 @@ function seeItems() {
                                 TEKST SKAL HER
                             &lt;/div&gt;
                             &lt;div class=&quot;modal-footer&quot;&gt;
-                                &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+                                &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Lukk&lt;/button&gt;
                                 &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Betal&lt;/button&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
@@ -296,7 +301,7 @@ function seeItems() {
                 </pre>
 
 
-                <p>FOR Å ÅPNE MODAL:</p>
+                <p>Og for å åpne modalen trenger du å kopiere inn en funksjon som du kaller på fra en knapp:</p>
 
                 <pre>
                 &lt;button onclick=&quot;openModal();&quot;&gt;MODAL OPEN&lt;/button&gt;
@@ -307,18 +312,17 @@ function seeItems() {
                 &lt;/script&gt;
                 </pre>
 
-                <p>LAG JSON OG PRINT JSON TIL ALERT</p>
+                <p><b>Oppgave:</b></p>
 
-                <p>Målet kan være dette, etter de har kodet input med navn og kontonr:</p>
-                <button onclick="testBetal()">BETAL</button>
-                <script>
-                    function testBetal() {
-                        var test = {a: 12345678, b: "Andreas"};
-                        alert('Kunde: ' + test.b + ', har betalt med kontonr: ' + test.a);
-                    }
-                </script>
-
-
+                <ol>
+                    <li>Implementer to input'er i din modal, slik at den ender opp å se noe slikt ut:
+                        <img style="width: 50%; height: 50%;" src="./modalres.png"></li>
+                    <li><b>Utfordring:</b> legg til funksjonalitet slik at når du trykker på 'betal', så kommer det opp en alert-box som sier hva du har skrevet inn i input'ene. Resultatet kan se slikt ut:
+                    <button class="btn btn-default" onclick="alert('Navn: Andreas\nKontonummer: 1234567890123456')">Eksempel</button>
+                        <br/>
+                    Du kan hente ut teksten til et element ved følgende kode: <code>var name = document.getElementById('name').value;</code> Her blir verdien til en input-tag lagret i variabelen 'name'.
+                    For CSS kan du style din egen input, eller bruke Bootstrap-klassen 'form-control'</li>
+                </ol>
             </div>
         </div>
 
@@ -331,17 +335,15 @@ function seeItems() {
                 <p>Om du er ferdig med oppgaven følger noen forslag til ekstraoppgaver du kan gjøre. Du trenger ikke gjøre alle da de er tidskrevende men forsøk gjerne en av dem. Den siste oppgaven er den mest utfordrende:</p>
 
                 <ul>
-                    <li>Registrer deg på <a href="https://codecademy.com/">Codecademy</a> og gjør kurset 'Make a website'</li>
-                    <li>Registrer deg på <a href="https://codecademy.com/">Codecademy</a> og gjør kurset 'Introduction to Javascript'</li>
                     <li><b>Utfordring:</b> prøv å vise frem produktene dine i et rutenett, slik som for eksempel <a
                             href="https://elkjop.no">Elkjøp</a> gjør. Forsøk dette med ren CSS eller med <a href="https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp">Bootstrap sitt grid-system</a>
-                        som ble vist i forelesningen. Lag en kopi av siden du har laget hittil, da vi skal fortsette på siden vi har laget (med liste) så langt de neste dagene.</li>
+                        som ble vist i forelesningen. Lag en kopi av siden du har laget hittil, da vi skal fortsette på siden vi har laget (med liste) så langt de neste dagene.
+                    </li>
+                    <li>Registrer deg på <a href="https://codecademy.com/">Codecademy</a> og gjør kurset 'Make a website'</li>
+                    <li>Registrer deg på <a href="https://codecademy.com/">Codecademy</a> og gjør kurset 'Introduction to Javascript'</li>
                 </ul>
             </div>
         </div>
-
-
-
     </div>
 </div>
 </body>

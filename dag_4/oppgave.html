@@ -36,7 +36,7 @@
 <div class="container">
     <h1>Oppgaver dag 4</h1>
     <p>Frem til nå har vi kun sett på frontenden i en webapplikasjon, altså HTML, CSS og Javascript, som utgjør det en bruker ser når webapplikasjonen blir besøkt på nettet.
-        Det vi skal se på fremover er backenden av en webapplikasjon. Backenden består da av all bakenforeliggende logikk som brukeren ikke ser. Man ka se for seg hva som skjer når du søker på Google.
+        Det vi skal se på fremover er backenden av en webapplikasjon. Backenden består da av all bakenforeliggende logikk som brukeren ikke ser. Man kan se for seg hva som skjer når du søker på Google.
     Da sender du kun inn en liten tekst til backenden som gjør masse matematiske operasjoner for deretter å returnere resultatet til deg.</p>
 
     <p>Vi skal bruke Python for å demonstrere denne delen av en webapplikasjon, Python er et veldig kraftig programmeringsspråk,
@@ -50,7 +50,7 @@
             <div class="panel-body">
                 <p>Om du allerede har innstallert Intellij og Flask (fra forelesning) og har opprettet et prosjekt, kan du gå videre til neste deloppgave.</p>
                 
-                <p>Første steg er å installere Intellij fra <a href="https://www.jetbrains.com/intellij/download/">Jetbrains</a>. Du velger selv om du vil installere Professional eller Community versjonen.
+                <p>Første steg er å installere Intellij fra <a href="https://www.jetbrains.com/intellij/download/">Jetbrains</a>. Du MÅ ha Ultimate versjonen.
                     Etter du har installert denne kan du åpne applikasjonen. Har du installert Professional, velger du å bruke prøve-versjonen.
                 </p>
 
@@ -95,7 +95,7 @@
 
                 <ol>
                     <li>Hva skjer om du legger sammen to tekststrenger? Prøv det ut. (eks <code>resultat = tekst1 + tekst2</code>)</li>
-                    <li>Prøv ut de forskjellige matematiske opeasjonene (+, -, *, /)</li>
+                    <li>Prøv ut de forskjellige matematiske operasjonene (+, -, *, /)</li>
                     <li>Print ut følgende: <code>'abcdef'.__len__</code>. Forklar hva som printes ut.</li>
                     <li>Skriv følgende Python kode:
                     <pre>
@@ -226,11 +226,28 @@ def double():
 
                 <ol>
 
-                    <li><b>UTFORDRING:</b> Lag et API som tar i mot to tall og returnerer summen.</li>
+                    <li>Lag et API som tar i mot to tall og returnerer summen.</li>
+                    <li>Lag et API som tar i mot en tekst og returnerer lengden på teksten.</li>
+                    <li>Lag et API som tar i mot navn, alder og jobb, og returnerer f.eks.: 'Hei NAVN, du er ALDER år gammel og jobber som JOBB'</li>
+                    <li>Definer en liste i Python-filen din. Den skal inneholde flere ord. Feks: <code>liste = ['Mobiltelefon', 'Lader', 'Datamaskin', 'Apekatt', 'Fjær', 'Sigarett', 'Skole']</code>.
+                    Lag deretter et API som tar i mot et tall, og returnerer det ordet som er på posisjonen til det tallet i listen. Om tallet er større enn lengden på listen, skal du returnere
+                        <u>'Det finnes ikke et element på index [TALLET_DITT]'.</u> Eksempel:
+                        <pre>
+            http://localhost:5000/hentListe?index=0
+
+            <u>- Vil da returnere ordet 'Mobiltelefon'.</u>
+
+            http://localhost:5000/hentListe?index=10
+
+            <u>- Vil da returnere 'Det finnes ikke et element på indeks 10'</u>
+                        </pre>
+                    </li>
+
                 </ol>
 
             </div>
         </div>
+
 
 
         <div class="panel panel-primary">
@@ -238,13 +255,11 @@ def double():
             <div class="panel-body">
                 <p><b>Ekstraoppgaver</b></p>
                 <p>1. Er du ferdig med alle oppgavene her nå så skal du gå gjennom alle oppgaver fra dag 2 og dag 3, og sørge for at du har gjort alle oppgavene frem til nå.</p>
-
                 <p>2. Sørg for at du skjønner forskjellen på en 'GET' og en 'POST'. Hittil har vi kun brukt en av metodene. Hvilken? </p>
                 <p>3. Last ned <a href="https://www.getpostman.com/">Postman</a>. Søk gjerne litt på Youtube eller lignende om hva det er for noe.</p>
                 <p>4. Prøv å kalle på et av API'ene du har laget gjennom Postman.</p>
                 <p>5. Gjør om en av funksjonene om til en POST. <u>Du må endre request.args['tall'] om til request.json['tall'])</u>
                     Prøv å finne ut på egen hånd hvordan du sender en POST-request gjennom Postman. Sitter du fast så ta kontakt med en av foreleserene! :) </p>
-
             </div>
         </div>
 
