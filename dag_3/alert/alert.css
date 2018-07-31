@@ -1,0 +1,38 @@
+#alertContainer{
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+   /* z-index: 1000; Kan forklare om Z-indeks*/
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+}
+
+
+#alertBox {
+    position: relative;
+    width: 300px;
+    min-height: 100px;
+    margin-top: 50px;
+    border: 1px solid #666;
+    background-color: #fff;
+}
+
+#alertText {
+    background-color: blue;
+    color: white;
+    height: 2em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#alertHeader{
+    height: 2em;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+

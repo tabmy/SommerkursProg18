@@ -107,6 +107,70 @@
             function deleteAll(){
                 document.getElementsByTagName('html')[0].innerHTML="";
             }</pre>
+
+        <script>
+            function alertInput(){
+                var text = document.getElementById('input1').value;
+                alert(text);
+            }
+        </script>
+        <button onclick="alertInput()">Alert</button>
+        <label for="input1">Skriv inn noe: </label><input type="text" id="input1">
+        <pre>
+               function alertInput(){
+                var text = document.getElementById('input1').value;
+                alert(text);
+            }</pre>
+        <script>
+            function newAlert() {
+                window.alert = function (text) { styleAlert(text); }
+            }
+            function styleAlert(text) {
+                var d = document;
+
+                if (d.getElementById('fancyAlert'))
+                {
+                    return;
+                }
+
+                var alertBox = d.createElement('div');
+                d.getElementsByTagName('body')[0].appendChild(alertBox);
+                alertBox.id="fancyAlert";
+                alertBox.innerHTML="<div style='width: 100%; background-color: blue; color:white;height:2em; text-align: center; font-size: 1.5em;'>ALERT</div><h2 class='alert alert-info'> Viktig melding! </h2>\n" +"<div class='alert alert-success'>Du skrev: "+text+" </button></div><button style='margin:2em;' class='btn btn-primary btn-lg pull-right' onclick='hideAlert()'>OK</button>";
+                alertBox.style=("position: fixed; top:10vw; left:40vw; background-color:white; border: 2px solid black; width: 25vw;");
+                alertBox.classList;
+
+
+            }
+            function hideAlert() {
+                document.getElementById('fancyAlert').parentNode.removeChild(document.getElementById('fancyAlert'));
+            }
+        </script>
+        <button onclick="newAlert()">Fancy alert</button>
+            <pre>
+    function newAlert() {
+        window.alert = function (text) { styleAlert(text); }
+    }
+    function styleAlert(text) {
+        var d = document;
+
+        if (d.getElementById('fancyAlert'))
+        {
+            return;
+        }
+
+        var alertBox = d.createElement('div');
+        d.getElementsByTagName('body')[0].appendChild(alertBox);
+        alertBox.id=&quot;fancyAlert&quot;;
+        alertBox.innerHTML=&quot;&lt;div style='width: 100%; background-color: blue; color:white;height:2em; text-align: center; font-size: 1.5em;'&gt;ALERT&lt;/div&gt;&lt;h2 class='alert alert-info'&gt; Viktig melding! &lt;/h2&gt;\n&quot; +&quot;&lt;div class='alert alert-success'&gt;Du skrev: &quot;+text+&quot; &lt;/button&gt;&lt;/div&gt;&lt;button style='margin:2em;' class='btn btn-primary btn-lg pull-right' onclick='hideAlert()'&gt;OK&lt;/button&gt;&quot;;
+        alertBox.style=&quot;position: fixed; top:10vw; left:40vw; background-color:white; border: 2px solid black; width: 25vw;&quot;;
+        alertBox.classList;
+    }
+    function hideAlert() {
+        document.getElementById('fancyAlert').parentNode.removeChild(document.getElementById('fancyAlert'));
+    }
+        </pre>
+
     </div>
 </div>
 
