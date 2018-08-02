@@ -46,9 +46,27 @@
 
     <div class="panel-group">
         <div class="panel panel-primary">
-            <div class="panel panel-heading">1. Innstallering av Intellij</div>
+            <div class="panel panel-heading">1. Innstallering av Python og Intellij</div>
             <div class="panel-body">
-                <p>Om du allerede har innstallert Intellij og Flask (fra forelesning) og har opprettet et prosjekt, kan du gå videre til neste deloppgave.</p>
+
+                <h2>Python</h2>
+
+                <p><b>MAC-brukere:</b> på Mac OS så skal Python være installert på forhånd. For å dobbeltsjekke dette kan du åpne programmet 'Terminal' og skrive 'python -v' (små bokstaver) og deretter trykke enter.
+                Hvis du får tilbake <code>command not found</code>, så må du installere Python manuelt.</p>
+
+                <p>Vi må først installere Python på maskinen vår. Dette kan gjøres fra følgende link: <a href="https://www.python.org/downloads/" target="_blank">Installer Python.</a> Trykk på <b>Downloads</b>
+                    i menyen øverst på siden, og deretter på 'Windows' eller 'Mac OS X'. Velg siste versjon. Deretter kan du velge <b>Download Windows x86-64 executable installer</b> om du bruker Windows,
+                eller <b>Download macOS 64-bit installer</b> om du bruker Mac.</p>
+
+                <p>Åpne filen du har installert. <b>NB VIKTIG!</b> Huk av på 'Add Python to PATH' i det første vinduet når du åpner installasjonsfilen. Deretter kan du trykke deg videre til installasjonen er fullført.
+                </p>
+
+
+                <h2>Intellij + Flask</h2>
+
+                <p><b>NB!</b> dette kan kun gjøres <b>etter</b> du har installert Python.</p>
+
+                <p>Om du allerede har installert Intellij og Flask (fra forelesning) og har opprettet et prosjekt, kan du gå videre til neste deloppgave.</p>
                 
                 <p>Første steg er å installere Intellij fra <a href="https://www.jetbrains.com/intellij/download/">Jetbrains</a>. Du MÅ ha Ultimate versjonen.
                     Etter du har installert denne kan du åpne applikasjonen. Har du installert Professional, velger du å bruke prøve-versjonen.
@@ -88,7 +106,7 @@
                 <pre>
                 tall = 10
                 tekst = 'Hei på deg'
-                sant = true</pre>
+                sant = True</pre>
                 <p>Prøver du å printe disse, f.eks. <code>print(tall)</code>, vil du se at verdien blir skrevet ut.</p>
 
                 <p><b>Oppgaver:</b></p>
@@ -101,7 +119,7 @@
                     <pre>
 tall = input('Skriv et tall:')
 print(tall)</pre>
-                        <p>Når du kjører dette programmet kan du skrive inn input i konsollen. Lag med dette en kalkulator som adderer to tall sammen.</p>
+                        <p>Når du kjører dette programmet kan du skrive inn input i konsollen. Lag med dette en kalkulator som adderer to tall sammen og printer ut resultatet til konsollen.</p>
                     </li>
                 </ol>
 
