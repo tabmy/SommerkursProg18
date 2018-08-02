@@ -51,6 +51,8 @@
         <div class="panel panel-heading">1. Oppsett av Python filen</div>
         <div class="panel-body">
 
+            <p><strong>PS! Om du ikke har gjort samtlige oppgaver fra de tidligere dagene (sett bort fra ekstraoppgaver), vil det anbefales at du heller prioriterer å gjøre dem.</strong></p>
+
             <p>Det første du kan gjøre er å lage et nytt Python-prosjekt i PyCharm(eller bare lag en ny fil i
                 eksisterende prosjekt), lage en ny Python fil, og skrive inn følgende kode for at Python-programmet skal
                 kjøre:</p>
@@ -63,9 +65,10 @@ def hello_world():
     return 'Hello world'
 
 @app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+def after_request(r):
+    r.headers['Access-Control-Allow-Origin'] = '*'
+    r.headers['Access-Control-Allow-Headers'] = '*'
+    return r
 
 app.run()
         </pre>
@@ -167,8 +170,7 @@ function calculatePrice(){
             <p><u>Legg til nødvendig kode slik at prisen oppdaterer seg automatisk hver gang du legger til et nytt
                 produkt i handlekurven.</u> Om du sitter fast snakk med medstudenter eller forelesere dine for å få
                 hjelp til å løse denne.
-                Om du ikke får det til, så vil løsningsforslaget være tilgjengelig ved å trykke på knappen under etter
-                kl 13 i dag.</p>
+                Om du ikke får det til, så vil løsningsforslaget være tilgjengelig ved å trykke på knappen under.</p>
 
             <button class="btn btn-default" onclick="showExample('sisteLosningsforslag')">Løsningsforslag</button>
 
@@ -230,6 +232,57 @@ function showPrice(price) {
         </div>
     </div>
 
+
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">4. Ekstraoppgave - utfordring!</div>
+        <div class="panel-body">
+            <p><strong>Denne oppgaven er kun ment for de som er ferdig med samtlige oppgaver fra tidligere dager som også vil ha en utfordring, da denne er relativt avansert.</strong></p>
+
+            <p>Vi skal nå ta i bruk modalen du lagde på dag 2. Hittil har vi bare laget det visuelle for denne, og vi skal nå ta den litt videre og faktisk 'betale' ved hjelp av å kalle på serveren.</p>
+
+            <p><strong>Oppgaven er</strong> at du skal lage funksjonalitet slik at når brukeren trykker på knappen 'betal', så skal det sendes et 'POST'-request til serveren.
+                I 'POST'-requesten skal totaltpris, navn og kortnummer sendes.</p>
+
+            <p>Kode for å sende en POST fra Javascript:</p>
+
+            <pre>
+    $.ajax({
+        url: 'http://localhost:5000/post-example',
+        contentType: "application/json; charset=utf-8",
+        type: 'POST',
+        data: JSON.stringify({
+            name: 'Andreas',
+            age: 24
+        }),
+        success: function (result) {
+            alert(result);
+        }
+    });
+            </pre>
+
+            <p>Deretter skal serveren logge (printe) følgende: <code>NAVN har betalt # kr med kontonr: #</code>, der # er tall, og NAVN er det som er skrevet inne i feltet 'navn'. Serveren skal deretter sende tilbake teksten "OK".</p>
+
+            <p>I serveren så må du bytte ut f.eks. <code>name = request.args['name']</code> med <code>name = request.json['name']</code> ved en 'POST'-request</p>
+
+            <p><strong>Utfordring</strong> når frontend mottar svaret "OK" fra serveren, så skal det navigeres til en ny side, som skal representere en kvittering. Legg til to parametere i URL'en: NAVN og TOTALPRIS.
+                Disse skal hentes fra Javascript på kvitteringssiden og legges inn i HTML (du bestemmer selv hvordan det presenteres). </p>
+
+            <p>Du kan navigere til en ny side i Javascript med følgende kode:</p>
+
+            <pre>
+        window.location.href = 'nesteside.html'
+            </pre>
+
+            <p>Du kan hente parametere fra en URL i Javascript slik:</p>
+
+            <pre>
+        var url_string = window.location.href   //URL er f.eks. "http://www.example.com/t.html?navn=nils"
+        var url = new URL(url_string);
+        var c = url.searchParams.get("navn");   // variabel 'c' får verdi 'nils'
+            </pre>
+        </div>
+    </div>
+
 </div>
 </body>
 <script>
@@ -249,6 +302,6 @@ function showPrice(price) {
 
     }
 
-    checkDate();
+    //checkDate();
 </script>
 </html>
