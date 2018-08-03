@@ -53,7 +53,7 @@
 
             <p><strong>PS! Om du ikke har gjort samtlige oppgaver fra de tidligere dagene (sett bort fra ekstraoppgaver), vil det anbefales at du heller prioriterer å gjøre dem.</strong></p>
 
-            <p>Det første du kan gjøre er å lage et nytt Python-prosjekt i Intellij(eller bare lag en ny fil i
+            <p>Det første du kan gjøre er å lage et nytt Python-prosjekt i IntelliJ(eller bare lag en ny fil i
                 eksisterende prosjekt), lage en ny Python fil, og skrive inn følgende kode for at Python-programmet skal
                 kjøre:</p>
             <pre>
@@ -105,7 +105,7 @@ def calculate():
     <div class="panel panel-primary">
         <div class="panel panel-heading">2. Sammenkobling av Frontend og Backend</div>
         <div class="panel-body">
-            <p>Det vi skal gjøre nå er å faktis koble sammen frontend og backend. Vi skal først gjøre et eksempel hvor
+            <p>Det vi skal gjøre nå er å faktisk koble sammen frontend og backend. Vi skal først gjøre et eksempel hvor
                 vi kaller på API'et som returnerer 'Hello World' for å kunne hente informasjon fra server
                 og deretter legge det inn i HTML'en vår, altså DOM-manipulasjon som vi har gjort en del tidligere.</p>
 
@@ -125,7 +125,7 @@ function calculatePrice(){
                 </pre>
 
             <p>Det denne koden gjør er å gjøre et kall på URL'en <code>http://127.0.0.1:5000/</code>, som vi
-                spesifiserte i Python kode over og sa at den skal returnere 'Hello World'. Vi <s></s>er også at dette
+                spesifiserte i Python kode over og sa at den skal returnere 'Hello World'. Vi ser også at dette
                 kallet er en type 'GET'.
                 Det siste som spesifiseres i denne koden er 'success', som spesifiseres som en funksjon. Dette kan være
                 litt forvirrende, men vi ser at i denne funksjonen har vi en variabel som heter 'result', som vil
@@ -161,14 +161,14 @@ function calculatePrice(){
         <div class="panel panel-heading">3. Oppdatere pris automatisk</div>
         <div class="panel-body">
             <p>Vi går nå ut fra at du har implementert det som er beskrevet i oppgavene over, slik at du kan kalle på
-                funksjonen 'calculatePrice' og får opp en alert hvor prisen på varer * pris skal komme opp-</p>
+                funksjonen 'calculatePrice' og får opp en alert hvor prisen på varer * pris skal komme opp.</p>
 
             <p>Dette delkapittelet er i seg selv en oppgave hvor du skal ta i bruk det du har lært de siste dagene.</p>
 
             <p><b>Oppgave:</b></p>
 
             <p><u>Legg til nødvendig kode slik at prisen oppdaterer seg automatisk hver gang du legger til et nytt
-                produkt i handlekurven.</u> Om du sitter fast snakk med medstudenter eller forelesere dine for å få
+                produkt i handlekurven.</u> Om du sitter fast, snakk med medstudenter eller forelesere dine for å få
                 hjelp til å løse denne.
                 Om du ikke får det til, så vil løsningsforslaget være tilgjengelig ved å trykke på knappen under.</p>
 
@@ -203,7 +203,7 @@ function showPrice(price) {
 
             <p>Ferdig med oppgaven? Gå gjennom alle tidligere oppgavesett og pass på at du har fått med deg alt!
                 Deretter kan du sammenligne webapplikasjonen du har laget med medstudenter,
-                og til slutt med forelesere (om de er tilgjengelig) for å se om de har noen tips til videreutvikler
+                og til slutt med forelesere (om de er tilgjengelig) for å se om de har noen tips til videreutvikling
                 eller om du har noen spørsmål til hvordan ting fungerer.
                 Videre så kan du velge mellom noen oppgaver mens du venter på pizza senere:</p>
 
@@ -221,7 +221,7 @@ function showPrice(price) {
             </ul>
 
             <p><b>Til slutt:</b> Vi håper at du har følt at du har lært noe gjennom disse dagene. Om du synes alt vi har
-                lært hittil virker veldig skremmende og overveldende så kan du ta det helt med ro! Det vi har
+                lært hittil virker veldig skremmende og overveldende, så kan du ta det helt med ro! Det vi har
                 gjennomgått
                 her, er temaer som vil bli introdusert gjennom alle tre årene du skal gå på OsloMet! Med andre ord har
                 du veldig lang tid på å gå mer i dybde på temaer vi har gått gjennom her.</p>
@@ -257,8 +257,7 @@ function showPrice(price) {
         success: function (result) {
             alert(result);
         }
-    });
-            </pre>
+    });</pre>
 
             <p>Deretter skal serveren logge (printe) følgende: <code>NAVN har betalt # kr med kontonr: #</code>, der # er tall, og NAVN er det som er skrevet inne i feltet 'navn'. Serveren skal deretter sende tilbake teksten "OK".</p>
 
@@ -270,16 +269,14 @@ function showPrice(price) {
             <p>Du kan navigere til en ny side i Javascript med følgende kode:</p>
 
             <pre>
-        window.location.href = 'nesteside.html'
-            </pre>
+        window.location.href = 'nesteside.html'</pre>
 
             <p>Du kan hente parametere fra en URL i Javascript slik:</p>
 
             <pre>
         var url_string = window.location.href   //URL er f.eks. "http://www.example.com/t.html?navn=nils"
         var url = new URL(url_string);
-        var c = url.searchParams.get("navn");   // variabel 'c' får verdi 'nils'
-            </pre>
+        var c = url.searchParams.get("navn");   // variabel 'c' får verdi 'nils'</pre>
         </div>
     </div>
 
